@@ -1,4 +1,4 @@
-#N canvas 23 22 572 634 10;
+#N canvas 502 22 577 640 10;
 #X obj 0 595 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
 14 -228856 -66577 0;
 #X obj 0 0 cnv 15 552 40 empty \$0-pddp.cnv.header metro 3 12 0 18
@@ -89,10 +89,10 @@ pdpedia: metro;
 ;
 #X text 11 23 メトロノームのように周期的にbangを送る
 ;
+#X text 168 491 -[metro]は引数または右インレットに入力された数値で設定される一定間隔で
+\; bangを出力する。;
 #X text 168 416 -右インレットに入力する数値はアウトレットから出力されるbangの間隔を
-ミリ秒単位で設定する。;
-#X text 168 491 -[metro]は引数または右インレットに入力された数値で
-設定される一定間隔で bangを出力する。;
+\; ミリ秒単位で設定する。;
 #X connect 16 0 22 0;
 #X connect 17 0 16 1;
 #X connect 18 0 16 0;
