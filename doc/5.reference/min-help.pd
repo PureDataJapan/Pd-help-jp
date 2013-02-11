@@ -1,4 +1,4 @@
-#N canvas 0 0 555 619 10;
+#N canvas 252 263 555 619 10;
 #X obj 0 595 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
 14 -228856 -66577 0;
 #X obj 0 0 cnv 15 552 40 empty \$0-pddp.cnv.header min 3 12 0 18 -204280
@@ -49,8 +49,6 @@ for Pd version 0.42.;
 #X obj 497 3 min;
 #X text 98 377 bang;
 #X text 98 402 float;
-#X text 168 458 - a float to the right inlet is stored.;
-#X text 168 544 - initializes the value of the right inlet.;
 #X obj 469 20 pddp/pddplink http://wiki.puredata.info/en/min -text
 pdpedia: min;
 #X floatatom 186 168 5 0 0 0 - - -;
@@ -60,17 +58,22 @@ pdpedia: min;
 #X obj 316 195 min 5;
 #X floatatom 316 168 5 0 0 0 - - -;
 #X floatatom 316 223 5 0 0 0 - - -;
-#X text 168 377 - output the last value.;
-#X text 168 402 - the incoming float is compared to the value at the
-right inlet \, and the greater of the two is output.;
-#X text 168 429 - a pair of floats will be distributed to the inlets.
+#X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide
 ;
-#X text 168 495 - the two values at the inlets are compared \, and
-the greater one is output.;
-#X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide;
-#X text 11 23 choose the lesser (minimum) of two values;
-#X connect 21 0 23 0;
-#X connect 23 0 22 0;
-#X connect 24 0 23 1;
-#X connect 25 0 27 0;
-#X connect 26 0 25 0;
+#X text 11 23 2つの値の小さい方を選択;
+#X text 168 377 - 最後の値を出力;
+#X text 168 402 - この入力値が、右インレットに入力された値より小さい場合は
+この値が出力される;
+#X text 168 429 - 入力されたlistの先頭の2要素が、 それぞれ左右インレットへの入力値と解釈される
+;
+#X text 168 458 - 右インレットに入力されたfloat値が保存される
+;
+#X text 168 495 - 両インレットの値が比較され、小さい方が出力される
+;
+#X text 168 544 - 右インレットからの入力値の初期値を設定する
+;
+#X connect 19 0 21 0;
+#X connect 21 0 20 0;
+#X connect 22 0 21 1;
+#X connect 23 0 25 0;
+#X connect 24 0 23 0;

@@ -1,4 +1,4 @@
-#N canvas 0 0 555 619 10;
+#N canvas 257 59 555 619 10;
 #X obj 0 595 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
 14 -228856 -66577 0;
 #X obj 0 0 cnv 15 552 40 empty \$0-pddp.cnv.header moses 3 12 0 18
@@ -63,10 +63,6 @@ pdpedia: moses;
 #X floatatom 124 142 4 0 0 0 - - -;
 #X floatatom 68 196 4 0 0 0 - - -;
 #X floatatom 121 196 4 0 0 0 - - -;
-#X text 65 66 Moses takes numbers and outputs them at left if they're
-less than a control value \, and at right if they're greater or equal
-to it. The creation argument initializes the control value (10 in this
-example) and the right inlet changes it.;
 #N canvas 103 360 428 202 More_info 0;
 #X obj 1 1 cnv 15 425 20 empty \$0-pddp.cnv.subheading empty 3 12 0
 14 -204280 -1 0;
@@ -84,38 +80,43 @@ pass through the right outlet.;
 #X connect 1 1 3 0;
 #X connect 4 0 1 0;
 #X restore 102 548 pd More_info;
-#X text 167 381 - a float to the right inlet sets the control value.
-;
 #X text 98 453 float;
 #X obj 78 454 cnv 17 3 17 empty \$0-pddp.cnv.let.1 1 5 9 0 16 -228856
 -162280 0;
-#X text 168 453 - incoming values (to the left inlet) will pass at
-the right outlet if they are greater than or equal to the control value.
-;
 #X obj 68 169 moses 10;
-#X text 224 179 The control value may be a float or integer. Try shift-scrolling:
-;
 #X floatatom 327 221 5 0 0 0 - - -;
 #X floatatom 327 267 5 0 0 0 - - -;
 #X obj 327 244 moses 1.5;
 #X floatatom 378 267 5 0 0 0 - - -;
-#X text 11 23 part a stream of numbers;
-#X text 168 350 - a two element list is distributed to the two inlets.
-Lists with more than two elements will be truncated.;
-#X text 168 516 - (optional) initializes the control value.;
-#X text 168 418 - incoming values (to the left inlet) will pass at
-the left outlet if they are less than the control value.;
 #X text 81 516 1) float;
-#X text 168 310 - if the float the left inlet is less than the control
-value \, it passes at the left inlet. If it is greater than or equal
-to the control value it passes at the right inlet.;
-#X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide;
+#X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide
+;
 #X obj 100 568 pddp/pddplink ../2.control.examples/18.conditional.pd
 -text doc/2.control.examples/18.conditional.pd;
-#X connect 17 0 27 0;
-#X connect 18 0 27 1;
-#X connect 27 0 19 0;
-#X connect 27 1 20 0;
-#X connect 29 0 31 0;
-#X connect 31 0 30 0;
-#X connect 31 1 32 0;
+#X text 11 21 数値の流れを分割する;
+#X text 67 66 「moses」は数値をとり、それがコントロール値より小さい場合は
+左アウトレットから、大きいか同じ場合は右アウトレットからその数値を
+出力する。コントロール値はアーギュメントにより初期化される（この例では
+10）そして右インレットがその値を変化させる。;
+#X text 247 164 コントロール値は、少数か整数のいずれか、
+ナンバーボックスをシフトを押してドラッグすると
+少数点の単位で値を変化させる事ができる。;
+#X text 168 310 - このfloatがコントロール値より小さい場合は、左アウトレットから
+同じか大きい場合は右アウトレットから値が出力される。
+;
+#X text 168 350 - listの先頭2つの要素がそれぞれ、左右インレットへの入力と解釈される
+第3要素以降は切り捨てられる。;
+#X text 167 381 - コントロール値を設定する;
+#X text 168 418 - 左インレットへの入力値がコントロール値より小さい場合は
+その値が左アウトレットから出力される;
+#X text 168 453 - 左インレットへの入力値がコントロール値と同じか大きい場合は
+その値が右アウトレットから出力される;
+#X text 168 516 - （オプション）コントロール値を初期化する
+;
+#X connect 17 0 24 0;
+#X connect 18 0 24 1;
+#X connect 24 0 19 0;
+#X connect 24 1 20 0;
+#X connect 25 0 27 0;
+#X connect 27 0 26 0;
+#X connect 27 1 28 0;

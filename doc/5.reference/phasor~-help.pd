@@ -1,4 +1,4 @@
-#N canvas 0 0 555 619 10;
+#N canvas 73 26 554 622 10;
 #X obj 0 595 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
 14 -228856 -66577 0;
 #X obj 0 0 cnv 15 552 40 empty \$0-pddp.cnv.header phasor~ 3 12 0 18
@@ -44,43 +44,47 @@ Wilkes revised the patch to conform to the PDDP template for Pd version
 #X obj 471 3 phasor~;
 #X obj 445 20 pddp/pddplink http://wiki.puredata.info/en/phasor~ -text
 pdpedia: phasor~;
-#N canvas 0 0 450 300 (subpatch) 0;
+#N canvas 0 22 450 300 (subpatch) 0;
 #X array \$0-array 100 float 0;
 #X coords 0 1 100 -1 200 100 1;
 #X restore 279 200 graph;
 #X obj 84 197 metro 500;
 #X floatatom 68 114 0 0 0 0 - - -;
-#X text 86 238 graph the output;
-#X text 97 114 <- specify frequency;
 #X obj 68 142 phasor~ 440;
-#X text 145 136 invoked with argument for non-signal input. Incoming
-messages override the initial value.;
 #X obj 84 172 loadbang;
 #X text 98 347 float;
 #X text 98 367 signal;
 #X text 98 411 list;
 #X text 98 446 signal;
-#X text 11 23 sawtooth generator;
-#X text 168 347 - a float sets the frequency of the sawtooth.;
-#X text 168 367 - incoming signal sets the frequency of the sawtooth.
-;
-#X text 167 391 - resets the phase (range is 0 to 1).;
-#X text 167 411 - a list will be truncated to the first element.;
 #X text 80 492 1) float;
-#X text 63 66 The [phasor~] object outputs a sawtooth signal \, traditionally
-used for table lookup via [cos~] or [tabread4~].;
-#X text 168 492 - (optional) with a floating-point argument \, [phasor~]
-takes floating-point messages to change frequency. If no argument is
-supplied \, the input is taken to be an audio signal.;
-#X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide;
+#X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide
+;
 #X obj 455 51 pddp/dsp;
 #X obj 98 551 pddp/pddplink ../3.audio.examples/C02.sawtooth-foldover.pd
 -text doc/3.audio.exampmles/C02.sawtooth-foldover.pd;
 #X obj 98 566 pddp/pddplink ../3.audio.examples/J09.bandlimited.pd
 -text doc/3.audio.exampmles/J09.bandlimited.pd;
 #X obj 68 221 tabwrite~ \$0-array;
-#X connect 15 0 38 0;
-#X connect 16 0 19 0;
-#X connect 19 0 38 0;
-#X connect 21 0 15 0;
-#X connect 21 0 15 0;
+#X text 11 23 ノコギリ波ジェネレーター;
+#X text 63 66 [phasor~]オブジェクトは、よく[cos~]や[tabread4~]を介して
+テーブルルックアップ合成に使われるようなノコギリ波を出力します。
+;
+#X text 97 114 <- 周波数を指定;
+#X text 86 238 出力をグラフ化;
+#X text 145 136 シグナル入力がない場合はオーグメントの値が周波数として用いられる。
+メッセージによってオーグメントで指定した初期値が上書きされる。
+;
+#X text 168 347 - float値でノコギリ波の周波数を指定;
+#X text 168 367 - signalでノコギリ波の周波数を指定;
+#X text 167 391 - 位相のリセット（範囲は0から1）;
+#X text 167 411 - listを入力した場合、最初の要素以外は無視される
+;
+#X text 168 490 -(必須ではない)floatのオーグメントを与えることで、[phasor~]はfloatの
+メッセージを、周波数の変更のために受け付けるようになる。もしこのオーグメント
+を与えないと、オーディオシグナルによって周波数の変更が行われる。
+;
+#X connect 15 0 28 0;
+#X connect 16 0 17 0;
+#X connect 17 0 28 0;
+#X connect 18 0 15 0;
+#X connect 18 0 15 0;

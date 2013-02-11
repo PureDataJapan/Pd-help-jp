@@ -1,4 +1,4 @@
-#N canvas 0 0 555 619 10;
+#N canvas 98 83 555 619 10;
 #X obj 0 595 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
 14 -228856 -66577 0;
 #X obj 0 0 cnv 15 552 40 empty \$0-pddp.cnv.header mtof 3 12 0 18 -204280
@@ -53,20 +53,21 @@ Wilkes revised the patch to conform to the PDDP template for Pd version
 #X obj 465 20 pddp/pddplink http://wiki.puredata.info/en/mtof -text
 pdpedia: mtof;
 #X obj 489 3 mtof;
-#X text 99 235 The mtof object transposes a midi value into a frequency
-in Hertz \, so that "69" goes to "440". You can specify microtonal
-pitches as in "69.5" (a quarter tone higher than 69).;
 #X obj 239 169 mtof;
 #X text 98 437 float;
 #X text 98 457 list;
 #X text 98 500 float;
-#X text 11 23 MIDI to frequency conversion;
-#X text 158 457 - lists will be truncated \, and the first element
-used as input.;
-#X text 158 437 - the incoming value.;
 #X obj 98 557 pddp/pddplink all_about_acoustic_conversions.pd;
-#X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide;
+#X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide
+;
 #X obj 98 572 pddp/pddplink ../3.audio.examples/A06.frequency.pd -text
 doc/3.audio.examples/A06.frequency.pd;
-#X connect 11 0 16 0;
-#X connect 16 0 10 0;
+#X text 11 23 MIDIから周波数への変換;
+#X text 158 438 - 入力値;
+#X text 158 457 - listは切り捨てられ、最初の要素のみが入力として使われる
+;
+#X text 111 240 mtofオブジェクトはMIDIの値を周波数(Hz.)に変換します。
+例えば、69は440になります。また69.5(1/4音69より高い)
+のような 微分音を指定することもできます。;
+#X connect 11 0 15 0;
+#X connect 15 0 10 0;

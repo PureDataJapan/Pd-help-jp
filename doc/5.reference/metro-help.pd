@@ -1,4 +1,4 @@
-#N canvas 0 0 555 619 10;
+#N canvas 322 129 556 621 10;
 #X obj 0 595 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
 14 -228856 -66577 0;
 #X obj 0 0 cnv 15 552 40 empty \$0-pddp.cnv.header metro 3 12 0 18
@@ -60,39 +60,42 @@ pdpedia: metro;
 #X obj 109 224 metro 500;
 #X floatatom 160 201 4 0 0 0 - - -;
 #X msg 109 125 1;
-#X text 177 124 nonzero number or "bang" to start;
 #X msg 150 158 0;
 #X msg 141 125 bang;
 #X msg 182 158 stop;
 #X obj 109 247 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
 -1;
-#X text 219 158 zero or "stop" to stop;
-#X text 168 335 - sending a nonzero number to the left inlet starts
-the metronome. Sending a zero stops it.;
 #X text 98 361 bang;
 #X text 98 378 stop;
 #X text 98 446 list;
-#X text 167 446 - a list to the right inlet will be truncated to the
-first item.;
-#X text 143 247 The metro object sends a series of bangs at a constant
-rate.;
 #X text 98 491 bang;
-#X text 168 544 - (optional) sets the initial rate in milliseconds.
-;
-#X text 168 361 - start the metronome.;
-#X text 168 378 - the "stop" message turns off the metronome.;
-#X text 167 416 - the right inlet sets the interval in milliseconds
-between each "bang" that is sent to the outlet of [metro].;
-#X text 168 491 - [metro] outputs a bang at a constant rate \, defined
-by the creation argument or a value sent to its right inlet.;
 #X text 80 544 1) float;
-#X text 11 23 send a bang periodically ala metronome;
-#X text 168 395 - a list will be distributed to the inlets of [metro].
+#X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide
 ;
-#X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide;
-#X connect 16 0 23 0;
+#X text 219 158 0か"stop"を送ると停止。;
+#X text 177 124 0以外の数値か"bang"を送ると開始。;
+#X text 168 335 -0以外の数値を左インレットに送るとメトロノームを開始。0を送ると停止。
+;
+#X text 168 378 -メッセージ"stop"はメトロノームを停止する
+;
+#X text 168 395 -リストはメトロの開始とbangの間隔を設定する。
+;
+#X text 167 446 -右インレットに入力するリストは第１項のみが認識される。
+;
+#X text 143 247 metroオブジェクトは一定間隔でbangを送り出す。
+;
+#X text 168 361 -メトロノームを開始。;
+#X text 168 544 -(オプション)ミリ秒単位で既定の間隔を設定する。
+;
+#X text 168 416 -右インレットに入力する数値はアウトレットから出力されるbangの間隔を
+ミリ秒単位で設定する。;
+#X text 168 491 -[metro]は引数または右インレットに入力された数値で
+設定される一定間隔で bangを出力する。;
+#X text 11 23 メトロノームのように周期的にbangを送る
+;
+#X connect 16 0 22 0;
 #X connect 17 0 16 1;
 #X connect 18 0 16 0;
+#X connect 19 0 16 0;
 #X connect 20 0 16 0;
 #X connect 21 0 16 0;
-#X connect 22 0 16 0;
