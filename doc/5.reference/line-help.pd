@@ -1,4 +1,4 @@
-#N canvas 0 0 555 619 10;
+#N canvas 0 22 571 636 10;
 #X obj 0 595 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
 14 -228856 -66577 0;
 #X obj 0 0 cnv 15 552 40 empty \$0-pddp.cnv.header line 3 12 0 18 -204280
@@ -56,13 +56,9 @@ pdpedia: line;
 #X obj 137 180 line;
 #X msg 137 87 1000 1000;
 #X floatatom 137 201 5 0 0 0 - - -;
-#X text 203 86 ramp up.;
 #X msg 146 110 0 1000;
-#X text 193 110 ramp down.;
 #X msg 158 154 stop;
 #X msg 154 133 42;
-#X text 180 134 jumps to this value immediately.;
-#X text 195 154 stops the current ramp.;
 #N canvas 106 115 428 446 continuous_ramps 0;
 #X text 19 98 In other words \, if [line] receives a message specifying
 some new target and time before reaching the previous target \, it
@@ -176,19 +172,7 @@ and step up until the output ceases to increase.;
 #X connect 10 0 12 0;
 #X connect 12 0 11 0;
 #X restore 101 529 pd grain_rate_and_creation_arguments;
-#X text 11 23 ramp generator;
 #X text 98 325 stop;
-#X text 168 325 - stop the current ramp.;
-#X text 167 346 - time to reach the target value (in milliseconds).
-;
-#X text 168 275 - target value. This value is stored and used as the
-starting value for the next ramp.;
-#X text 168 301 - a (target \, time) pair is distributed between the
-two inlets.;
-#X text 168 474 - grain rate in milliseconds (default: 20 ms).;
-#X text 168 383 - [line] outputs a linear ramp \, reaching the target
-value within the time value specified by the right inlet and at a grain
-rate specified by the second creation argument (default 20 ms).;
 #N canvas 106 32 428 493 tips_on_using_line 0;
 #X text 20 39 [line]'s left inlet defines the "target" value. The right
 inlet defines the "time" value. The "target \, time" pair of numbers
@@ -241,14 +225,29 @@ the ramp). Hence \, the example to the left works:;
 #X restore 101 507 pd tips_on_using_line;
 #X text 80 459 1) float;
 #X text 80 474 2) float;
-#X text 168 459 - initial value \, i.e. \, the starting point of the
-first ramp.;
 #X obj 3 598 pddp/pddplink all_about_help_patches.pd -text Usage Guide
 ;
 #X obj 98 571 pddp/pddplink ../3.audio.examples/C03.zipper.noise.pd
 -text doc/3.audio.examples/C03.zipper.noise.pd;
+#X text 168 474 -ミリ秒単位の解像度（初期値：20ミリ秒
+;
+#X text 168 459 -初期値。例:最初の傾斜の開始値;
+#X text 167 346 -目標値に到達する時間（ミリ秒）。;
+#X text 168 325 -傾斜での変化を停止。;
+#X text 168 301 -(目標値 \, 時間)の組み合わせは、2つのインレットに入力されたの同じように
+\; 扱われる。;
+#X text 168 275 -目標値。この数値は保存されて次の傾斜の開始値になる。
+;
+#X text 195 154 傾斜の変化を停止。;
+#X text 180 134 すぐに目的の数値へ跳ぶ。;
+#X text 193 110 傾斜を下降する。;
+#X text 203 86 傾斜を上昇する。;
+#X text 11 23 傾斜の生成;
+#X text 168 383 -[line]は線形の傾斜の変化を出力し、右インレットに入力した数値で設定された
+\; 時間をかけて目標値に到達する。 \; 変化の解像度は2番目の引数で設定される（初期値は20ミリ秒）。
+;
 #X connect 17 0 19 0;
 #X connect 18 0 17 0;
+#X connect 20 0 17 0;
 #X connect 21 0 17 0;
-#X connect 23 0 17 0;
-#X connect 24 0 17 0;
+#X connect 22 0 17 0;
