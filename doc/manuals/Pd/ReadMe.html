@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="http://puredata.info/plone.css" />
+</head>
+<body>
+<h2>Pd-extended 0.43.4-extended</h2>
+<p>Pd is a real-time, graphical programming language for media processing.  It provides an environment for audio analysis, synthesis, and processing, with a rich set of multimedia capabilities.  You can get Pd for Linux, Windows, MacOS X, BSD, or IRIX.</p>
+<p>For more information, go to: <a href="http://puredata.info" target="pd">http://puredata.info</a></p>
+<h3>Installation</h3>
+<p>To install Pd, drag the .app into your <b>/Applications</b> folder or to the shortcut in the disk image.  (<i>You might need to put the old one in the trash before copying this one to <b>/Applications</b></i>)</p>
+<p>If you want to start with the default preferences, go to the <b>Preferences</b> and click on <b>Reset to Defaults</b>.  You can also throw away the Pd preferences file <strong>~/Library/Preferences/org.puredata.pdextended.plist</strong> (<code>~</code> <i>means your home folder</i>), or run this command in the Terminal.app: </p><p><code>rm ~/Library/Preferences/org.puredata.pdextended.plist</code></p><p>You can get detailed editing access to the preferences with the Apple utilities: <code>defaults read org.puredata.pdextended</code>, or, <b>Property List Editor</b>, which is freely available as part of <a href="http://developer.apple.com/tools/xcode/download/" target="_blank">XCode</a> or the <a href="http://www.apple.com/support/downloads/serveradmintools104.html" target="_blank">Server Tools</a>.</p>
+<p>If you want to use PDP on Mac OS X 10.4/Tiger or 10.3/Panther, you will need to install X11 (X11 comes installed with 10.5/Leopard).  It comes on the install CD/DVD that your computer came with.  For more detail, see <a href="http://www.simplehelp.net/2006/10/22/how-to-install-x11-in-os-x/" target="_blank">How to install X11 in OS X</a> or <a href="http://puredata.info/docs/faq/macosx" target="_blank">How do I install Pd on MacOS X?</a>.</p>
+<h3>Installing Externals, Objects, and Help files</h3>
+<p>
+If you would like to install other externals, objects, help files, etc. there are special folders that Pd-extended uses, which are listed below.  If the folder does not exist, you should create it.  You can find out more details about this by reading that FAQ:  <a href="http://puredata.info/docs/faq/how-do-i-install-externals-and-help-files" target="_blank">How do I install externals and help files?</a>.</p>
+<dl>
+<dt>Only for the current user account</dt>
+<dd>~/Library/Pd</dd>
+<dt>For all user accounts on the computer</dt>
+<dd>/Library/Pd</dd>
+</dl>
+<h3>Flext Binaries have been removed from Pd-extended</h3>
+<p>As of release 0.41.4 of Pd-extended, the whole package is built from source every night.  That means that some objects have been removed from the package because they were not being built from source (objects like [pool], [msd], [flashserver], etc.).  You can download these objects from the original authors or <a href="http://puredata.info/docs/faq/how-do-i-download-the-flext-binaries-that-used-to-be-included-in-pd-extended" target="_blank">get the files from the 0.40.3 Pd-extended release</a>.
+</p>
+<h3>License</h3>
+<p>
+This package is released under the <a href="http://www.gnu.org/copyleft/gpl.html" target="gpl">GNU GPL</a>.  The Pd core and some other included code is originally available with a <a href="http://pure-data.svn.sourceforge.net/viewvc/pure-data/trunk/pd/LICENSE.txt?revision=HEAD">BSD license</a> from the Pd SVN on SourceForge.
+</p>
+<h3>Patented Algorithms</h3>
+<p>
+This package may contain software that is covered by patents in certain countries, like the U.S. and Germany.  In order to use this software you must have the proper license.  Below is a list of the known software packages that are covered by patents in some countries:
+</p>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/MP3" target="license">MP3 aka MPEG-1 Part 3 Layer 3</a></li>
+<li><a href="http://en.wikipedia.org/wiki/MPEG-2" target="license">MPEG-2</a></li>
+<li><a href="http://en.wikipedia.org/wiki/MPEG-4#Licensing" target="license">MPEG-4</a></li>
+</ul>
+<p>Please consider trying to get rid of software patents in your country: <a href="http://www.nosoftwarepatents.com" target="nsp">http://www.nosoftwarepatents.com</a></p>
+<p>(this package was built on Thu Jan 24 04:21:56 EST 2013)</p>
+</body></html>
