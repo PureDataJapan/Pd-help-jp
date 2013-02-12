@@ -1,4 +1,4 @@
-#N canvas 599 22 566 644 10;
+#N canvas 599 22 555 619 10;
 #X obj 0 595 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
 14 -228856 -66577 0;
 #X obj 0 0 cnv 15 552 40 empty \$0-pddp.cnv.header ftom 3 12 0 18 -204280
@@ -63,11 +63,11 @@ pdpedia: ftom;
 #X obj 98 572 pddp/pddplink ../3.audio.examples/A06.frequency.pd -text
 doc/3.audio.examples/A06.frequency.pd;
 #X text 11 23 周波数からMIDIへの変換;
+#X text 131 224 fromオブジェクトは周波数(Hz.)をMIDIの値に変換します。
+例えば、440は69になります。また周波数0ヘルツは、
+MIDI値-1500（厳密には負の無限数）となります;
 #X text 153 431 - 入力値;
 #X text 153 456 - listは切り捨てられ、最初の要素のみが入力として使われる
 ;
-#X text 131 224 ftomオブジェクトは周波数(Hz.)をMIDIの値に変換します。
-例えば、440は69になります。また周波数0ヘルツは、
-MIDI値-1500（厳密には負の無限数） \; となります;
 #X connect 11 0 18 0;
 #X connect 18 0 10 0;
