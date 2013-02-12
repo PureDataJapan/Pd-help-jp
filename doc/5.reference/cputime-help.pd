@@ -1,4 +1,4 @@
-#N canvas 0 0 555 619 10;
+#N canvas 257 92 555 619 10;
 #X obj 0 595 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
 14 -228856 -66577 0;
 #X obj 0 0 cnv 15 552 40 empty \$0-pddp.cnv.header cputime 3 12 0 18
@@ -58,15 +58,7 @@ pdpedia: cputime;
 #X msg 122 156 bang;
 #X msg 83 134 bang;
 #X floatatom 83 200 0 0 0 0 - - -;
-#X text 155 202 Output is in milliseconds;
-#X text 118 134 Click here to start or reset;
-#X text 78 57 The [cputime] object measures elapsed CPU time. CPU time
-is the amount of time your computer's CPU requires to perform a task
--- that's a short definition.;
 #X obj 83 178 cputime;
-#X text 160 157 Click here to get elapsed CPU time. Click again...and
-again...to see periodic measurements from the start or reset time.
-Be patient.;
 #X obj 78 374 cnv 17 3 17 empty \$0-pddp.cnv.let.1 1 5 9 0 16 -228856
 -162280 0;
 #X text 98 373 bang;
@@ -153,7 +145,6 @@ operating system's internal clock.;
 #X restore 102 486 pd Time_Objects;
 #X obj 78 416 cnv 17 3 17 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
 -162280 0;
-#X text 11 23 measure CPU time;
 #X text 98 341 bang;
 #X text 168 341 - an initial bang to the left inlet starts the timer.
 Subsequent bangs reset the timer.;
@@ -164,6 +155,16 @@ to be output (in milliseconds).;
 #X text 101 531 For a patch that uses [cputime] see:;
 #X obj 98 551 pddp/pddplink ../7.stuff/tools/load-meter.pd;
 #X text 101 571 (also accessible from the "Media" menu);
-#X connect 13 0 19 1;
-#X connect 14 0 19 0;
-#X connect 19 0 15 0;
+#X text 11 23 CPU時間を計る;
+#X text 78 57 「cputime」オブジェクトは経過したCPU時間を計ります。
+CPU時間は、簡単に言うならば \; １つの仕事をあなたのコンピュータがこなすのに必要とする時間です。
+;
+#X text 118 134 クリックしてスタートまたはリセット
+;
+#X text 155 202 出力はミリ秒;
+#X text 160 157 クリックすると経過CPU時間を出力する。
+\; 定期的に計測する場合はクリックを繰り返す。
+;
+#X connect 13 0 16 1;
+#X connect 14 0 16 0;
+#X connect 16 0 15 0;
