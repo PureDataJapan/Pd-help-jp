@@ -1,4 +1,4 @@
-#N canvas 0 22 555 619 10;
+#N canvas 116 22 555 619 10;
 #X obj 0 595 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
 14 -228856 -66577 0;
 #X obj 0 0 cnv 15 552 40 empty \$0-pddp.cnv.header noise~ 3 12 0 18
@@ -25,7 +25,6 @@ Wilkes revised the patch to conform to the PDDP template for Pd version
 0 13 -228856 -1 0;
 #X obj 0 567 cnv 3 550 3 empty \$0-pddp.cnv.more_info more_info 8 12
 0 13 -228856 -1 0;
-#X text 98 544 (none);
 #N canvas 107 480 428 109 Related_objects 0;
 #X obj 1 1 cnv 15 425 20 empty \$0-pddp.cnv.subheading empty 3 12 0
 14 -204280 -1 0;
@@ -43,21 +42,23 @@ pdpedia: noise~;
 #X obj 218 217 noise~;
 #X obj 284 256 print~;
 #X obj 218 256 env~ 4096;
-#X text 216 192 the output range is -1 to 1...;
 #X obj 152 256 snapshot~;
 #X floatatom 152 283 0 0 0 0 - - -;
 #X msg 152 229 bang;
 #X msg 284 229 bang;
-#X text 168 474 - the inlet to [noise~] is not used.;
-#X text 98 511 signal;
-#X text 11 23 uniformly distributed white noise;
-#X text 98 474 (inactive);
-#X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide;
+#X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide
+;
 #X obj 455 51 pddp/dsp;
-#X connect 14 0 15 0;
-#X connect 14 0 16 0;
-#X connect 14 0 18 0;
-#X connect 16 0 13 0;
-#X connect 18 0 19 0;
-#X connect 20 0 18 0;
-#X connect 21 0 15 0;
+#X text 11 23 ホワイトノイズを均一に出力する。;
+#X text 216 192 出力の範囲は-1.0から1.0...;
+#X text 98 474 (不使用);
+#X text 168 474 -[noise~]の入力は使用されない。;
+#X text 98 511 シグナル;
+#X text 98 544 (なし);
+#X connect 13 0 14 0;
+#X connect 13 0 15 0;
+#X connect 13 0 16 0;
+#X connect 15 0 12 0;
+#X connect 16 0 17 0;
+#X connect 18 0 16 0;
+#X connect 19 0 14 0;

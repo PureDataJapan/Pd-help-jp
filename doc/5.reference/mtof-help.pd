@@ -1,4 +1,4 @@
-#N canvas 98 83 555 619 10;
+#N canvas 320 75 618 644 10;
 #X obj 0 595 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
 14 -228856 -66577 0;
 #X obj 0 0 cnv 15 552 40 empty \$0-pddp.cnv.header mtof 3 12 0 18 -204280
@@ -68,6 +68,6 @@ doc/3.audio.examples/A06.frequency.pd;
 ;
 #X text 111 240 mtofオブジェクトはMIDIの値を周波数(Hz.)に変換します。
 例えば、69は440になります。また69.5(1/4音69より高い)
-のような 微分音を指定することもできます。;
+のような微分音を指定することも \; できます。;
 #X connect 11 0 15 0;
 #X connect 15 0 10 0;
