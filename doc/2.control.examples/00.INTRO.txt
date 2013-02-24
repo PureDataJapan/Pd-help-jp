@@ -1,21 +1,28 @@
-This series of patches serves as a tutorial for Pd's "control" structure, as
-opposed to its audio functions (covered in the next series.)  These tutorials
-are inspired by Chris Dobrian's Max tutorial patches.
+00 まずはじめに
 
-It's probably best to look at the first section here before going on to the
-audio portion, but afterward there's no reason not to browse back and forth
-between the two, and even the third series on "fft" based techniques.
+この階層、[2.control.examples]にあるパッチは、Pdでの、オーディオ（音響）に関する機能以外の
+"制御"に関してのチュートリアルを目的としています。
+（オーディオに関しては、次のシリーズで網羅されています）
+これらのチュートリアルは、Chris Dobrian氏が作成した、
+Maxチュートリアルパッチに触発されて作成されました。
 
-The relationship between "control" and "audio" is described in Pd's HTML
-documentation, which is more like a reference manual than an introduction.
-Also, you probably will need to look there to get Pd up and running stably so
-that you can enjoy the patches here.
+Pdで、"心ときめく音響”に踏み込む前に、
+まずこのセクションを見ていくのが、ベストではないかと思われます。
+（特に、プログラミングの初心者には）
+しかしながら、fft(高速フーリエ変換）を扱った[3.audio.examples]や
+[4.data.structure]など、あちこち拾い読みしない理由も何もないと思われます。
 
-The patches are roughly divided as shown:
+"制御(=control)" と "音響(=audio)"の間の関連については、
+Pdの、HTMLドキュメントに記載されています。
+それは、Pdのイントロダクションというよりは、
+リファレンスマニュアルに近いかもしれません。。
 
-テスト
+また、Pdを起動し、安定して使用するために、
+HTMLドキュメントを見る必要があるかもしれません。
+そうすることで、ここにあるパッチをエンジョイできると思われます。
 
-1. objects and connections
-2. subpatches, tables, and organization
-3. specific techniques.
-
+ここにあるパッチを、いささか乱暴に分類すると：
+1. オブジェクトと接続
+2. サブパッチ、テーブル、構成
+3. 特定の技術.
+という内容になります。
