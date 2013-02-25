@@ -1,4 +1,4 @@
-#N canvas 0 0 555 619 10;
+#N canvas 0 22 555 619 10;
 #X obj 0 595 cnv 15 552 21 foo \$0-pddp.cnv.footer empty 20 12 0 14
 -228856 -66577 0;
 #X obj 0 0 cnv 15 552 40 empty \$0-pddp.cnv.header abs 3 12 0 18 -204280
@@ -27,7 +27,6 @@ for Pd version 0.42.;
 0 13 -228856 -1 0;
 #X obj 0 570 cnv 3 550 3 empty \$0-pddp.cnv.more_info more_info 8 12
 0 13 -228856 -1 0;
-#X text 98 546 (none);
 #N canvas 102 479 428 109 Related_objects 0;
 #X obj 0 0 cnv 15 425 20 empty \$0-pddp.cnv.subheading empty 3 12 0
 14 -204280 -1 0;
@@ -53,19 +52,19 @@ for Pd version 0.42.;
 -162280 0;
 #X floatatom 239 225 0 0 0 0 - - -;
 #X floatatom 239 168 0 0 0 0 - - -;
-#X text 112 248 [abs] will output the absolute value of a number.;
 #X obj 239 198 abs;
 #X obj 492 4 abs;
 #X obj 465 21 pddp/pddplink http://wiki.puredata.info/en/abs -text
 pdpedia: abs;
-#X text 11 24 absolute value;
-#X text 168 479 - a list will be truncated \, and the first element
-will be used as input.;
-#X text 168 518 - the absolute value of the number given at the inlet.
-;
 #X text 98 459 float;
-#X text 168 459 - the incoming value.;
 #X obj 4 598 pddp/pddplink all_about_help_patches.pd -text Usage Guide
 ;
-#X connect 14 0 16 0;
-#X connect 16 0 13 0;
+#X text 11 24 絶対値;
+#X text 169 247 [abs]は数値の絶対値を出力する。;
+#X text 168 459 -入力する数値。;
+#X text 168 479 -リストの第１要素のみが入力される。
+;
+#X text 168 518 -入力値の絶対値を出力する;
+#X text 98 546 (なし);
+#X connect 13 0 14 0;
+#X connect 14 0 12 0;
