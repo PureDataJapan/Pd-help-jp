@@ -1,4 +1,4 @@
-#N canvas 0 0 555 619 10;
+#N canvas 0 22 556 626 10;
 #X obj 0 595 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
 14 -228856 -66577 0;
 #X obj 0 0 cnv 15 552 40 empty \$0-pddp.cnv.header inlet~ 3 12 0 18
@@ -41,8 +41,6 @@ Jonathan Wilkes to conform to the PDDP template for Pd version 0.42.
 #X obj 369 199 sig~ 12;
 #X floatatom 126 203 0 0 0 0 - - -;
 #X floatatom 126 255 0 0 0 0 - - -;
-#X text 96 182 messages in and out;
-#X text 339 176 audio in and out;
 #X obj 369 237 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #N canvas 50 247 428 293 subpatch-with-inlets-and-outlets 0;
@@ -68,13 +66,11 @@ Jonathan Wilkes to conform to the PDDP template for Pd version 0.42.
 #X connect 8 0 7 0;
 #X connect 10 0 9 0;
 #X restore 126 229 pd subpatch-with-inlets-and-outlets;
-#X text 98 353 (none);
-#X text 11 23 signal inlet for a subpatch;
 #X obj 477 3 inlet~;
 #X obj 451 20 pddp/pddplink http://wiki.puredata.info/en/inlet~ -text
 pdpedia: inlet~;
 #X text 98 385 signal;
-#N canvas 61 152 428 466 up/downsampling 0;
+#N canvas 61 152 428 466 up/downsampling 1;
 #X obj 30 396 print~;
 #X obj 48 370 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -84,10 +80,15 @@ pdpedia: inlet~;
 #X obj 195 396 print~;
 #X obj 213 370 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#N canvas 0 0 450 300 (subpatch) 0;
+#N canvas 0 22 450 300 (subpatch) 0;
 #X array \$0-tab 64 float 3;
-#A 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#A 0 0.114286 0.142858 0.214287 0.285716 0.342859 0.400002 0.44286
+0.500003 0.514289 0.557146 0.557146 0.557146 0.542861 0.485717 0.400002
+0.314288 0.228573 0.142858 0.071429 -0.0142858 -0.071429 -0.128572
+-0.157144 -0.185715 -0.214287 -0.242859 -0.328573 -0.357145 -0.428574
+-0.457146 -0.514289 -0.542861 -0.542861 -0.500003 -0.471431 -0.414288
+-0.371431 -0.314288 -0.228573 -0.17143 -0.100001 0 0.0571432 0.114286
+0.128572 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 #X coords 0 1 64 -1 200 140 1;
 #X restore 216 181 graph;
 #X obj 274 368 s \$0-tab;
@@ -159,14 +160,6 @@ extra samples.;
 #X connect 13 2 4 0;
 #X restore 171 538 pd up/downsampling;
 #X text 80 477 1) symbol atom;
-#X text 98 127 The subpatch below shows how to use [inlet] \, [inlet~]
-\, [outlet] \, and [outlet~] objects to get data into and out of a
-subpatch:;
-#X text 168 477 - (optional) The word "hold" will cause sample/hold
-upsampling/downsampling \, and the word "lin" will cause linear upsampling/downsampling.
-See the subpatch below for more details:;
-#X text 98 77 The [inlet~] object allows signals to be sent to a subpatch
-from objects on the parent canvas.;
 #X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide
 ;
 #X text 168 385 - the [inlet~] object outputs the signal sent to the
@@ -174,8 +167,21 @@ inlet of the subpatch in which it is found. When multiple [inlet~]
 or [inlet] objects are in one subpatch \, their horizontal order corresponds
 with the inlets drawn on the containing object in the parent patch.
 ;
-#X connect 10 0 16 1;
-#X connect 11 0 16 0;
-#X connect 15 0 9 0;
-#X connect 16 0 12 0;
-#X connect 16 1 9 0;
+#X text 98 353 (なし);
+#X text 11 23 サブパッチのためのオーディオシグナルの入口
+;
+#X text 96 182 メッセージの入力と出力;
+#X text 339 176 オーディオの入力と出力;
+#X text 168 477 -（オプション）引数"hold"はサンプル&ホールドのupsampling/downsampling
+\; を実行します。引数"lin"は線形のupsampling/downsamplingを実行します。
+\; 詳細は以下のサブパッチを参照してください:;
+#X text 98 77 [inlet~]オブジェクトは親パッチのオブジェクトからサブパッチの中のオブジェクトへオーディオ
+\; シグナルが送られるようにします。;
+#X text 98 127 以下のサブパッチは[inlet]、[inlet~]、[outlet]そして[outlet~]オブジェクトを使って、
+\; サブパッチの外からデータを取り込み、外へデータを出していく方法を示しています。
+;
+#X connect 10 0 14 1;
+#X connect 11 0 14 0;
+#X connect 13 0 9 0;
+#X connect 14 0 12 0;
+#X connect 14 1 9 0;

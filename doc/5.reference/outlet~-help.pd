@@ -1,4 +1,4 @@
-#N canvas 0 0 555 619 10;
+#N canvas 0 22 555 619 10;
 #X obj 0 595 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
 14 -228856 -66577 0;
 #X obj 0 0 cnv 15 552 40 empty \$0-pddp.cnv.header outlet~ 3 12 0 18
@@ -35,8 +35,6 @@ Jonathan Wilkes to conform to the PDDP template for Pd version 0.42.
 #X text 8 2 [outlet~] Related Objects;
 #X text 274 43 [switch~];
 #X restore 102 598 pd Related_objects;
-#X text 98 436 (none);
-#X text 11 23 signal outlet for a subpatch;
 #X obj 477 3 outlet~;
 #X obj 446 20 pddp/pddplink http://wiki.puredata.info/en/outlet~ -text
 pdpedia: outlet~;
@@ -44,8 +42,6 @@ pdpedia: outlet~;
 #X obj 369 199 sig~ 12;
 #X floatatom 126 203 0 0 0 0 - - -;
 #X floatatom 126 255 0 0 0 0 - - -;
-#X text 96 182 messages in and out;
-#X text 339 176 audio in and out;
 #X obj 369 237 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #N canvas 50 247 428 293 subpatch-with-inlets-and-outlets 0;
@@ -71,14 +67,9 @@ pdpedia: outlet~;
 #X connect 8 0 7 0;
 #X connect 10 0 9 0;
 #X restore 126 229 pd subpatch-with-inlets-and-outlets;
-#X text 98 127 The subpatch below shows how to use [inlet] \, [inlet~]
-\, [outlet] \, and [outlet~] objects to get data into and out of a
-subpatch:;
 #X obj 78 356 cnv 17 3 60 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
 -162280 0;
 #X text 98 355 signal;
-#X text 98 77 The [outlet~] object allows signals to be sent from a
-subpatch to objects on the parent canvas.;
 #N canvas 60 123 428 466 up/downsampling 0;
 #X obj 30 396 print~;
 #X obj 48 370 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -89,7 +80,7 @@ subpatch to objects on the parent canvas.;
 #X obj 195 396 print~;
 #X obj 213 370 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#N canvas 0 0 450 300 (subpatch) 0;
+#N canvas 0 22 450 300 (subpatch) 0;
 #X array \$0-tab 64 float 3;
 #A 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
@@ -164,18 +155,27 @@ extra samples.;
 #X connect 13 2 4 0;
 #X restore 171 538 pd up/downsampling;
 #X text 80 477 1) symbol atom;
-#X text 168 477 - (optional) The word "hold" will cause sample/hold
-upsampling/downsampling \, and the word "lin" will cause linear upsampling/downsampling.
-See the subpatch below for more details:;
 #X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide
 ;
-#X text 168 355 - the [outlet~] object passes a signal to the outlet
-of the subpatch in the parent canvas. When multiple [outlet~] and/or
-[outlet] objects are in one subpatch \, their horizontal order corresponds
-with the outlets drawn on the containing object in the parent patch.
+#X text 339 176 オーディオの入力と出力;
+#X text 96 182 メッセージの入力と出力;
+#X text 11 23 サブパッチのためのオーディオシグナルの出口
 ;
-#X connect 13 0 19 1;
-#X connect 14 0 19 0;
-#X connect 18 0 12 0;
-#X connect 19 0 15 0;
-#X connect 19 1 12 0;
+#X text 98 77 [outlet~]オブジェクトはサブパッチから親パッチの中のオブジェクトへオーディオシグナルが
+\; 送られるようにします。;
+#X text 98 127 以下のサブパッチは[inlet]、[inlet~]、[outlet]そして[outlet~]オブジェクトを使って、
+\; サブパッチの外からデータを取り込み、外へデータを出していく方法を示しています。
+;
+#X text 168 355 -[outlet~]オブジェクトはサブパッチのアウトレットへオーディオシグナルを
+\; 通過させます。サブパッチの中に複数の[outlet~][outlet]がある場合、水平での
+\; 並び順は親パッチの中にあるサブパッチのインレットの配置に連動します。
+;
+#X text 98 436 (なし);
+#X text 168 477 -（オプション）引数"hold"はサンプル&ホールドのupsampling/downsampling
+\; を実行します。引数"lin"は線形のupsampling/downsamplingを実行します。
+\; 詳細は以下のサブパッチを参照してください:;
+#X connect 11 0 15 1;
+#X connect 12 0 15 0;
+#X connect 14 0 10 0;
+#X connect 15 0 13 0;
+#X connect 15 1 10 0;
