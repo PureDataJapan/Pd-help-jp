@@ -1,4 +1,4 @@
-#N canvas 0 0 555 619 10;
+#N canvas 0 22 566 637 10;
 #X obj 0 595 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
 14 -228856 -66577 0;
 #X obj 0 0 cnv 15 552 40 empty \$0-pddp.cnv.header outlet 3 12 0 18
@@ -38,21 +38,13 @@ Jonathan Wilkes to conform to the PDDP template for Pd version 0.42.
 #X obj 78 408 cnv 17 3 17 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
 -162280 0;
 #X text 98 407 anything;
-#X text 98 487 (none);
-#X text 98 515 (none);
-#X text 11 23 control outlet for a subpatch;
 #X obj 477 3 outlet;
 #X obj 451 20 pddp/pddplink http://wiki.puredata.info/en/outlet -text
 pdpedia: outlet;
-#X text 167 515 - a symbolic argument to an [outlet] object which will
-be ignored. However \, [outlet] will not create if you give it an initial
-float argument.;
 #X obj 373 259 print~;
 #X obj 373 199 sig~ 12;
 #X floatatom 130 203 0 0 0 0 - - -;
 #X floatatom 130 255 0 0 0 0 - - -;
-#X text 100 182 messages in and out;
-#X text 343 176 audio in and out;
 #X obj 373 237 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #N canvas 50 247 428 293 subpatch-with-inlets-and-outlets 0;
@@ -78,20 +70,28 @@ float argument.;
 #X connect 8 0 7 0;
 #X connect 10 0 9 0;
 #X restore 130 229 pd subpatch-with-inlets-and-outlets;
-#X text 98 127 The subpatch below shows how to use [inlet] \, [inlet~]
-\, [outlet] \, and [outlet~] objects to get data into and out of a
-subpatch:;
-#X text 98 77 The [outlet] object allows messages to be sent from objects
-in a subpatch to objects on the parent canvas.;
 #X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide
 ;
-#X text 168 407 - the inlet passes any message sent to [outlet] to
-the outlet of canvas in which it is contained. When multiple [outlet~]
-and/or [outlet] objects are in one subpatch \, their horizontal order
-corresponds to the outlets drawn on the containing object in the parent
-patch.;
-#X connect 17 0 23 1;
-#X connect 18 0 23 0;
-#X connect 22 0 16 0;
-#X connect 23 0 19 0;
-#X connect 23 1 16 0;
+#X text 98 77 [outlet]オブジェクトはサブパッチのオブジェクトから親パッチの中のオブジェクトへメッセージ
+\; が送られるようにします。;
+#X text 98 127 以下のサブパッチは[inlet]、[inlet~]、[outlet]そして[outlet~]オブジェクトを使って、
+\; サブパッチの外からデータを取り込み、外へデータを出していく方法を示しています。
+;
+#X text 100 182 メッセージの入力と出力;
+#X text 343 176 オーディオの入力と出力;
+#X text 11 23 サブパッチのためのコントロールデータの出口
+;
+#X text 98 487 (なし);
+#X text 98 515 (なし);
+#X text 168 407 -[outlet]に送られるあらゆる種類のメッセージをサブパッチのアウトレットへ
+\; 通します。サブパッチの中に複数の[outlet~][outlet]がある場合、水平での
+\; 並び順は親パッチの中にあるサブパッチのアウトレットの配置に連動します。
+;
+#X text 167 515 -[outlet]でシンボルの引数を設定しても無視されるだけです。しかし、[outlet]
+\; で数値の引数を設定すると[outlet]は作成されません。
+;
+#X connect 13 0 17 1;
+#X connect 14 0 17 0;
+#X connect 16 0 12 0;
+#X connect 17 0 15 0;
+#X connect 17 1 12 0;
