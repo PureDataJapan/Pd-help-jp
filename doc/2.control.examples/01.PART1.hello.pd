@@ -1,16 +1,67 @@
-#N canvas 9 21 600 496 12;
-#X msg 204 32 hello world;
-#X obj 204 105 print;
-#X floatatom 321 32 0 0 0;
-#X text 215 48 message;
-#X text 319 49 atom;
-#X text 201 123 object;
-#X text 53 150 There are four types of text objects in Pd: message \, atom \, object \, and comment.;
-#X text 54 187 Messages respond to mouse clicks by sending their contents to one or more destinations. The usual destination is the "outlet" at the lower left corner of the box.;
-#X text 55 239 Click the message box and watch the terminal window Pd was started in. You should see the "hello world" message appear.;
-#X text 55 278 Atoms respond to "Dragging" up and down with the mouse \, by changing their contents and sending the result out their outlets. You can also type at an atom after clicking on it \; hit "enter" to output the number or click anywhere else to cancel.;
-#X text 52 359 Objects \, like "print" above \, may have all sorts of functions depending on what's typed into them. The "print" object simply prints out every message it receives.;
-#X text 53 415 To get help on an object \, right-click it. You should see a "help window" for the object.;
-#X text 354 470 updated for release 0.33;
+#N canvas 783 143 1124 854 12;
+#X msg 116 39 hello world;
+#X obj 116 94 print;
+#X floatatom 323 32 0 0 0 0 - - -;
+#X text 12 1 1.はじめの一歩　hello world;
+#X text 17 151 Pdは、オブジェクトと呼ばれる「箱」を、パッチコードと呼ばれる「線」で
+;
+#X text 17 168 つなぐ事によって、プログラミングを行いますが、
+;
+#X text 17 185 オブジェクトには、さまざまな役割をもったものがあります。
+;
+#X text 17 223 このウインドウの[配置]メニューを開いてみてください。
+;
+#X text 127 55 メッセージボックス;
+#X text 113 112 オブジェクトボックス;
+#X text 319 56 ナンバーボックス;
+#X text 17 239 そこに見られる項目が、Pdで使用されるオブジェクトです。
+;
+#X text 17 256 このパッチでは、最も使う頻度の高い、3つのオブジェクトを使用しています。
+;
+#X text 17 295 メッセージボックスは、数値や文字列といったメッセージ(=データと考えればよいでしょう)を入れておきます
+;
+#X text 17 312 マウスでクリックするとその中身が左下隅のアウトレットから出力されます。
+;
+#X text 16 329 またそれぞれのオブジェクトで、線がつながっているところ、あるいは2重線に
+;
+#X text 17 346 なっているところがありますが、下側をアウトレット(出力）、上側をインレット（入力）
+;
+#X text 16 363 と呼びます。;
+#X text 16 399 メッセージボックスをクリックして見ましょう。
+;
+#X text 16 476 中身が変更され、アウトレットから出力されます。
+;
+#X text 15 432 "hello world"というメッセージ(=文字列データ)をみることができるはずです。
+;
+#X text 16 461 ナンバーボックスは、数値を入れておきます。上下のマウスドラッグによって、
+;
+#X text 18 415 Pdを起動したときに最初に開いた、Pdウインドウに
+;
+#X text 15 492 メッセージボックスの時と同じように、ナンバーボックスの数値が、
+;
+#X text 14 507 メッセージ(=数値データ)として出力され、Pdウインドウに表示されます。
+;
+#X text 16 543 オブジェクトボックスは、ちょっとややこしいかもしれません。
+;
+#X text 16 559 この文章の最初に、《オブジェクトと呼ばれる「箱」を》と書いて、
+;
+#X text 16 575 メッセージボックス、ナンバーボックスという、2種類のオブジェクトをみてきましたが
+;
+#X text 16 591 オブジェクトボックスは、オブジェクトボックスというオブジェクトだからです。
+;
+#X text 15 607 さらに、オブジェクトボックスは、ボックスの中にタイプする特定の予約された文字列により
+;
+#X text 15 623 さまざまな機能を提供します。ここでは、"print"とタイプされていますが、
+;
+#X text 14 641 "print"オブジェクトは、受信したメッセージを Pdウインドウに表示する機能を持った
+;
+#X text 17 659 オブジェクトボックスということになります
+;
+#X text 15 688 オブジェクトについてのヘルプが必要なときは、
+;
+#X text 15 703 オブジェクト上で、マウスを右クリックし、ヘルプを選択してください。
+;
+#X text 15 715 そのオブジェクトについての、ヘルプウィンドウをみることができます。
+;
 #X connect 0 0 1 0;
 #X connect 2 0 1 0;
