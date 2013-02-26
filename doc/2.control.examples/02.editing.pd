@@ -1,17 +1,83 @@
-#N canvas 1 0 581 630 12;
-#X msg 195 36 hello world;
-#X obj 195 72 print;
-#X floatatom 304 36 0 0 0;
-#X text 194 15 message;
-#X text 304 14 atom;
-#X text 255 73 object;
-#X text 34 102 When you first open a Pd document like this one \, your cursor will be an arrow. Select "edit mode" in the Edit menu and the cursor will change to the image of a hand. The patch is now in edit mode. You can move any object by dragging it.;
-#X text 33 185 Select "Edit mode" again in the Edit menu and you're back to the arrow cursor which acts on objects without moving them.;
-#X text 32 373 You can create new objects by duplicating existing ones using the "duplicate" menu item. You can also "cut" and "paste" them. If you duplicate several connected objects the connections will be replicated too.;
-#X text 33 237 In Edit mode \, if you click on a message \, object \, or comment \, you can then retype the text. For objects this will create a new object and delete the old one. Pd will try to reconnect the newly created object in the same way as the old one.;
-#X text 34 442 Edit mode also lets you make and break connections between objects. Put the "hand" cursor over a line connecting two objects: it turns into an X. Clicking will delete the connection. Hold the cursor over an outlet and it becomes a circle (a patch point). Drag to any box and release \; you will be connected to the nearest inlet.;
-#X text 32 320 When you're done changing the contents of the box \, click outside the box to deselect it. This tells Pd to incorporate the new text.;
-#X text 328 604 updated for Pd version 0.33;
-#X text 35 544 The "put" menu creates new text items of any of the four types. You can also put a "symbol" box \, analogous to a number box but for showing and entering text strings.;
+#N canvas 91 119 796 940 12;
+#X msg 195 57 hello world;
+#X obj 195 106 print;
+#X floatatom 332 58 0 0 0 0 - - -;
+#X text 194 36 メッセージボックス;
+#X text 332 36 ナンバーボックス;
+#X text 239 106 オブジェクトボックス;
+#X text 480 865 updated for Pd version 0.33;
+#X text 11 8 2.パッチの作り方;
+#X text 58 143 最初に、今開いているような、Pdドキュメント(パッチ)を開くと、カーソルは、矢印になっているはずです。
+;
+#X text 58 160 "編集モード"を、編集メニューで選択すると、カーソルは、"手型"に変わります。
+;
+#X text 58 179 その状態で、パッチは、実行モードから編集モードになり、
+;
+#X text 58 197 すべての オブジェクトをドラッグして動かす事ができるようになります。。
+;
+#X text 58 213 再度、編集メニューの "編集モード"を選択し、チェックをはずすと、実行モードになり
+;
+#X text 58 231 カーソルが矢印にもどり、どの オブジェクトも動かすことができなくなります。
+;
+#X text 58 248 "編集モード"の右にある、キーボードショートカットを覚えると作業を早くできます。
+;
+#X text 60 277 ※編集モードでも、[ctrl]キーを押すと、メッセージボックスをクリックしてメッセージを出力したり
+;
+#X text 60 295 ナンバーボックスをドラッグして、数値を変更することができます。
+;
+#X text 58 323 編集モードでは、オブジェクトをクリックすることにより、
+;
+#X text 58 340 タイプして中身を変更することができます。
+;
+#X text 58 355 この事は、オブジェクトの箱は消えたりしないけれど、変更する前のオブジェクトが削除され、
+;
+#X text 58 371 新しい オブジェクトが作成されることを意味します。
+;
+#X text 58 388 Pdは、新しいオブジェクトを、再接続しようと試みます。
+;
+#X text 58 416 オブジェクトの中身の変更が終わったら、選択解除をするために、オブジェクトの外を
+;
+#X text 58 433 クリックしてください。また、このことにより、Pdは新しい中身を認識します。
+;
+#X text 58 462 すでに、作成されている オブジェクトの複製により、新しいオブジェクトを作成したいときは、
+;
+#X text 58 476 編集メニューにある"複製"で行えます。普段よく使う、カット＆ペーストも使えます。
+;
+#X text 58 492 また、複数の接続しているobjectを複製した場合、その接続は保持されます。
+;
+#X text 58 525 編集モードでは、オブジェクト間の接続をしたり、接続を切断したりできます。
+;
+#X text 58 542 "手型"カーソルを、２つのオブジェクトを接続している、パッチコードの上に持っていくと、
+;
+#X text 58 558 カーソルが、"×型"に変わるので、その状態で、パッチコードをクリックすると、
+;
+#X text 58 575 パッチコードが青色に変わり（選択状態）デリートキーを押すと、接続が解除されます。
+;
+#X text 58 599 また、カーソルを、オブジェクトのアウトレットの上に持っていくと、カーソルが"○型"にかわるので、
+;
+#X text 58 616 その状態で、別のオブジェクトにマウスをドラッグして、ボタンを離すと、インレットに接続されます。
+;
+#X text 58 640 パッチコードは、インレットからアウトレットに接続することはできません。
+;
+#X text 58 657 アウトレットからインレットにむけて、ドラッグしてください。
+;
+#X text 58 673 アウトレットからインレットへ、であれば、オブジェクトの上下、左右の位置関係は
+;
+#X text 58 687 関係なく、接続することができます。
+;
+#X text 58 704 （下側にあるオブジェクトのアウトレットから、上にあるオブジェクトのインレットへ)
+;
+#X text 58 746 "配置"メニューは、5つの、テキスト型オブジェクトを作成することができます。
+;
+#X text 58 764 また、"シンボルボックス”は、数値ボックスに類似していますが、
+;
+#X text 58 780 Symbol型のメッセージを、表示したり、入力したりするためのものです。
+;
+#X text 58 809 テキスト型オブジェクトというのは、オブジェクトの中に、文字(=テキスト）を書き込んで
+;
+#X text 58 826 作成するオブジェクトで、配置メニューの上から5つまでがテキスト型オブジェクトになります。
+;
+#X text 58 845 その下にあるのが、GUI型オブジェクト（Graphical
+User Interface)になります。;
 #X connect 0 0 1 0;
 #X connect 2 0 1 0;
