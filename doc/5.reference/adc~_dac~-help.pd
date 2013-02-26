@@ -1,4 +1,4 @@
-#N canvas 0 0 555 619 10;
+#N canvas 0 22 555 619 10;
 #X obj 0 595 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
 14 -228856 -66577 0;
 #X obj 0 0 cnv 15 552 40 empty \$0-pddp.cnv.header (adc~/dac~) 3 12
@@ -38,7 +38,8 @@ comment.);
 #X text 18 180 [shoutcast~] (What library is this in?);
 #X restore 102 597 pd Related_objects;
 #X obj 469 3 adc~;
-#X obj 5 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide;
+#X obj 5 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide
+;
 #N canvas 44 65 428 471 Multi-channel_audio 0;
 #X text 19 38 All sound cards are capable of at least two channels
 of audio. Pd supports these two channels by default and uses your system's
@@ -102,9 +103,9 @@ switch \, or disable both using the "-nosound" switch.;
 #X obj 509 3 adc~;
 #X obj 436 20 pddp/pddplink http://wiki.puredata.info/en/adc~_dac~
 -text pdpedia: adc~_dac~;
-#X text 12 23 audio input/output;
 #X obj 101 107 pddp/pddplink adc~-help.pd;
-#X text 98 56 [adc~] and [dac~] provide real-time audio input and output
-for Pd \, respectively \, whether analog or digital. Click below for
-the individual help patches:;
 #X obj 101 127 pddp/pddplink dac~-help.pd;
+#X text 96 58 [adc~]と[dac~]はそれぞれPdでのリアルタイムの音の入力と出力を実現します。
+\; 音の形式はデジタルやアナログです。以下の個別のヘルプパッチをクリックしてください。
+;
+#X text 12 23 音の入力/出力;
