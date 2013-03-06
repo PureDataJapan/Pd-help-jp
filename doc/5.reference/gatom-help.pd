@@ -25,7 +25,7 @@ Wilkes revised the patch to conform to the PDDP template for Pd version
 0 13 -228856 -1 0;
 #X obj 0 499 cnv 3 550 3 empty \$0-pddp.cnv.more_info more_info 8 12
 0 13 -228856 -1 0;
-#X text 98 474 (none);
+#X text 98 474 (なし);
 #N canvas 89 496 428 109 Related_objects 0;
 #X obj 1 1 cnv 15 425 20 empty \$0-pddp.cnv.subheading empty 3 12 0
 14 -204280 -1 0;
@@ -114,46 +114,43 @@ want to use both \, see the [nbx] object:;
 #X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide
 ;
 #X symbolatom 25 138 10 0 0 0 - - -;
-#X text 11 23 atom (number box and symbol box);
+#X text 11 23 アトム(ナンバーボックスおよびシンボルボックス);
 #X symbolatom 476 3 10 0 0 0 - - -;
-#X text 440 3 and;
+#X text 440 3 と;
 #X symbolatom 25 174 10 0 0 0 - - -;
-#X text 61 52 A number box allows you to display a number or enter
-a number using the mouse and keyboard. When a number arrives at the
-number box's inlet \, it is displayed and sent to the outlet. You can
-click on a number box and drag upward or downward to change the value
-continuously.;
-#X text 97 134 A symbol box allows you to display a single symbol-atom
-or enter one using the mouse and keyboard. Unlike a number box you
-cannot change the value by clicking and dragging.;
-#X text 96 172 The symbol box is called "Symbol" in the "Put" menu.
+#X text 61 52 ナンバーボックスは数値を表示したり、マウスやキーボードから
+入力することができる。インレットに数値を受けると、値を表示して\
+アウトレットに送る。\
+上下にドラッグすると、値を連続的に変化させることができる。;
+#X text 97 134 シンボルボックスは単一のシンボルを表示したり\
+マウスやキーボードから入力することができる。\
+ナンバーボックスと違い、ドラッグでの変更はできない。;
+#X text 96 172 ナンバーボックスは "Put" メニューで "Symbol" と表記される。
 ;
-#X text 168 239 - sends the current value to the outlet.;
+#X text 168 239 - セットされた値をアウトレットに送る。;
 #X msg 469 156 set foo;
 #X symbolatom 469 180 10 0 0 0 - - -;
-#X text 168 309 - symbol box only: an incoming symbol is displayed
-and output. (Number box will display and output zero.);
-#X text 168 259 - number box only: sets the current value and outputs
-it. (Symbol box will display 'float' and output 'symbol float'.);
-#X text 168 289 - a list will be truncated to the first item.;
-#X text 168 339 - displays the incoming value without outputting it
-(e.g. \, "set 23" will cause a number box to display 23). Sending a
-set message without a value does not change the current value of a
-number box or symbol box.;
-#X text 168 404 - number box only: outputs a float for each message
-it receives (except set).;
+#X text 168 309 - シンボルボックスのみ: 値を表示してアウトレットに送る。\
+  (ナンバーボックスでは 0 を表示・出力する);
+#X text 168 259 - ナンバーボックスのみ: 値を表示してアウトレットに送る。\
+　 (シンボルボックスでは'float'と表示し'symbol float'を出力する);
+#X text 168 289 - リストは先頭要素のみに切り詰められてセットされる。;
+#X text 168 339 - 値の表示のみ行ない、アウトレットには送らない。\
+(例: "set 23" はナンバーボックスに 23 を表示させる)\
+値なしの "set"　を送った場合、値は変化しない。;
+#X text 168 404 - ナンバーボックスのみ: インレットに受けた小数値を出力する。\
+  (setメッセージ以外のとき);
 #X text 98 434 symbol;
-#X text 168 434 - symbol box only: outputs a symbol message for each
-message it receives (except set).;
-#X text 100 537 Control-clicking (or command-clicking on a mac) toggles
-the value between 0 and the last nonzero value.;
+#X text 168 434 - シンボルボックスのみ: インレットに受けたシンボルを出力する。\
+  (setメッセージ以外のとき);
+#X text 100 537 Controlクリック(MacではCommandクリック)は\
+0　と直近にセットした　非0　の値とを交互に切り替える。;
 #X floatatom 59 545 5 0 0 0 - - -;
-#X text 100 503 You can shift-click a number box and drag to change
-the number by hundredths instead of ones.;
-#X text 62 112 The number box is called "Number" in the "Put" menu.
-;
-#X text 67 197 To enter data simply click a number box or symbol box
-and begin typing. Then click "Enter" to finish and output it.;
+#X text 100 503 Shiftクリックしてドラッグすることで\
+0.01 ずつ値を増減させることができる(通常は 1ずつ増減する);
+#X text 62 112 ナンバーボックスは "Put" メニューで "Number" と表記される。;
+#X text 67 197 ナンバーボックスやシンボルボックスにデータを入れるには\
+クリックしてキータイプした後、Enterキーを押す。;
 #X connect 14 0 15 0;
 #X connect 16 0 17 0;
 #X connect 25 0 29 0;
