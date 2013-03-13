@@ -32,7 +32,7 @@ for Pd version 0.42.;
 -162280 0;
 #X obj 78 243 cnv 17 3 82 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
 -162280 0;
-#X text 501 4 or;
+#X text 501 4 か;
 #X obj 100 524 pddp/pddplink http://crca.ucsd.edu/~msp/Pd_documentation/x2.htm#s3.1
 -text Pd manual 2.3.1: anatomy of a message;
 #N canvas 107 165 428 375 More_Info 0;
@@ -88,17 +88,16 @@ pdpedia: int;
 #X floatatom 105 205 0 0 0 0 - - -;
 #X floatatom 105 100 0 0 0 0 - - -;
 #X floatatom 144 153 0 0 0 0 - - -;
-#X text 153 122 You can force the object to output the stored number.
+#X text 153 122 保持している数値を出力する;
+#X text 150 100 値をセット-出力をsimoultaneouslyにできる;
+#X text 172 153 数値の保持のみおこない、出力しない;
+#X text 100 52 Tip: ナンバーボックスをShiftを押しながらクリック-ドラッグして、\
+[int]オブジェクトが数値を切り捨てている様子を確認してみてください。\
+decemal placesはドロップします。
 ;
-#X text 150 100 You can set and output the value simoultaneously.;
-#X text 172 153 You can store the number \, without outputting it.
-;
-#X text 100 52 Tip: Press and hold SHIFT while click-n-dragging these
-number boxes to see how the [int] object truncates the number - drops
-decimal places.;
 #X obj 105 179 int 6.5;
-#X text 100 479 Note: [int] does not 'rounded off' floats. It discards
-everything to the right of the decimal point.;
+#X text 100 479 注意: [int]は小数値を丸めているのではなく、\
+小数点より右側すべてを削除している。;
 #X obj 78 384 cnv 17 3 17 empty empty 0 5 9 0 16 -228856 -162280 0
 ;
 #N canvas 108 391 428 173 Building_a_counter 0;
@@ -117,19 +116,16 @@ object's stored value is incremented by 1 with each "bang".;
 #X connect 3 0 5 0;
 #X connect 4 0 3 1;
 #X restore 102 567 pd Building_a_counter;
-#X text 11 20 store an integer;
-#X text 169 430 - initializes the object and stores the number until
-the value is reset. The creation argument is optional. If no creation
-argument is provided \, the object defaults to zero.;
-#X text 169 382 - outputs the stored value as a float message.;
-#X text 168 242 - output the currently stored integer.;
-#X text 168 262 - [int] will convert an incoming float to an integer--
-all numerals to the right of the decimal place are truncated (dropped).
-This value is then sent to the outlet.;
-#X text 168 302 - a list is truncated to the first element \, which
-is then output and stored.;
-#X text 168 334 - a float received at the right inlet is converted
-to an integer and stored for later use.;
+#X text 11 20 整数を保持する;
+#X text 169 430 - オブジェクトを初期化して、値が更新されるまで保持し続ける。\
+クリエーションアーギュメントはオプションであり、\
+指定しなかった場合は0で初期化する。;
+#X text 169 382 - 保持された値をfloatメッセージとして出力する;
+#X text 168 242 - 保持している整数値を出力する;
+#X text 168 262 - [int] は入力された小数値を整数値に変換する --\
+小数点以下の値はすべて切り捨てられてからアウトレットに値が送られる。;
+#X text 168 302 - リストは最初の要素に切り詰められ、出力・保持される;
+#X text 168 334 - 整数値に変換して保持される;
 #X text 81 430 1) float;
 #X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide
 ;
