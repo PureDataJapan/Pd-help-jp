@@ -54,13 +54,12 @@ for Pd version 0.42.;
 #X obj 481 3 symbol;
 #X obj 455 20 pddp/pddplink http://wiki.puredata.info/en/symbol -text
 pdpedia: symbol;
-#X text 11 23 store a symbol;
+#X text 11 23 シンボルを格納する;
 #X text 98 325 bang;
 #X text 98 350 symbol;
 #X text 98 441 symbol;
 #X text 98 483 symbol;
-#X text 168 483 - the symbol is output when a message is received at
-the left inlet of [symbol].;
+#X text 168 483 - 左インレットにメッセージを受けると、シンボルを出力する。;
 #X obj 51 220 symbol;
 #X symbolatom 51 279 10 0 0 0 - - -;
 #X obj 60 256 print;
@@ -69,14 +68,13 @@ the left inlet of [symbol].;
 #X msg 84 132 symbol horse;
 #X msg 98 154 symbol wolf;
 #X msg 107 177 symbol pig;
-#X text 168 325 - sending a bang will force [symbol] to output its
-stored stored value.;
-#X text 275 120 IMPORTANT NOTE;
+#X text 168 325 - 格納されているシンボルを出力する。;
+#X text 275 120 重要;
 #X obj 302 156 symbol;
 #X symbolatom 302 195 10 0 0 0 - - -;
-#X text 270 213 Careful not to get them confused.;
-#X text 270 175 is very different than the symbol box:;
-#X text 270 136 the [symbol] object:;
+#X text 270 213 両者はまったく別のものなので注意すること。;
+#X text 270 175 シンボルボックス:;
+#X text 270 136 [symbol]オブジェクト:;
 #X msg 51 57 bang;
 #N canvas 78 344 428 194 Symbol_vs_Symbol_Box 0;
 #X obj 1 1 cnv 15 425 20 empty \$0-pddp.cnv.subheading empty 3 12 0
@@ -99,26 +97,23 @@ selector inconsistently.;
 #X connect 5 0 7 0;
 #X connect 7 0 11 0;
 #X restore 102 567 pd Symbol_vs_Symbol_Box;
-#X text 168 535 - (optional) initializes the stored symbol.;
+#X text 168 535 - (オプション) 格納されたシンボルを初期化する。;
 #X text 80 535 1) symbol atom;
-#X text 121 259 For this example \, I have used the symbol box to display
-the value that was stored in the [symbol] object \, as well as printing
-the value to the console.;
-#X text 167 441 - a symbol to the right inlet is stored. (Note: symbol
-atoms like "foo" will not be accepted.);
-#X text 105 49 The [symbol] object stores a symbol (which is set either
-by its creation argument or by the right inlet) and then outputs that
-symbol when it receives a "bang" message or a new symbol in its left
-inlet.;
-#X text 168 391 - all other messages to the left inlet of symbol will
-store and output the selector. E.g. \, a float will output the word
-"float" \, a list will output "list" \, a pointer will output "pointer"
-\, "foo bar" will output "foo" \, and so forth.;
-#X text 168 350 - a symbol sent to the left inlet will be stored and
-output. Symbol atoms (e.g. \, "foo") are accepted and given the "symbol"
-selector.;
+#X text 121 259 この例では、コンソールに値を表示するとともに
+[symbol]オブジェクトの格納値を表示するためシンボルボックスを使っている。;
+#X text 167 441 - 右インレットへのシンボルは、格納される。\
+(注意:"foo"のようなシンボルアトムは受け付けない);
+#X text 105 49 [symbol]オブジェクトは、シンボルを格納する。\
+bangメッセージまたは左インレットに新しいシンボルを受けると\
+格納しているシンボルを出力する。\
+セットするには、クリエーションオーギュメントもしくは右インレットを使う。;
+#X text 168 391 - そのほかのメッセージは格納され、メッセージのセレクタを出力する。\
+たとえば、小数は　"float"、リストは　"list"、ポインタは　"pointer"\
+"foo bar"メッセージは　"foo" という単語を出力する。;
+#X text 168 350 - シンボルを格納するとともに、出力する。\
+シンボルアトム（例えば "foo"）を受け付けるとsymbolセレクタを付与する。;
 #X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide;
-#X text 98 391 anything;
+#X text 98 391 なんでも;
 #X connect 19 0 20 0;
 #X connect 19 0 21 0;
 #X connect 22 0 19 0;

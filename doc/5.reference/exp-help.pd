@@ -26,7 +26,7 @@ for Pd version 0.42.;
 0 13 -228856 -1 0;
 #X obj 0 566 cnv 3 550 3 empty \$0-pddp.cnv.more_info more_info 8 12
 0 13 -228856 -1 0;
-#X text 98 543 (none);
+#X text 98 543 (なし);
 #N canvas 104 478 428 108 Related_objects 0;
 #X obj 1 1 cnv 15 425 20 empty \$0-pddp.cnv.subheading empty 3 12 0
 14 -204280 -1 0;
@@ -56,14 +56,15 @@ pdpedia: exp;
 #X floatatom 239 187 0 0 0 0 - - -;
 #X floatatom 239 130 0 0 0 0 - - -;
 #X obj 239 158 exp;
-#X text 296 234 n;
-#X text 103 237 [exp] will output the value of E;
-#X text 104 252 where E is Euler's constant and n is the value of the
-inlet.;
-#X text 11 23 raise e to the nth power;
-#X text 168 465 - a list will be truncated \, and the first element
-will be used as input.;
+#X text 171 233 n;
+#X text 103 237 [exp] は 　E　　の値を出力する。;
+#X text 104 252 ここで、Eはオイラー数、n はインレットの値を表す。
+;
+#X text 11 23 自然対数の底eのべき乗を得る;
+#X text 168 465 - リストは切りつめられ、最初の要素が入力値として使われる。
+;
 #X text 98 465 list;
-#X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide;
+#X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide
+;
 #X connect 16 0 17 0;
 #X connect 17 0 15 0;
