@@ -14,7 +14,8 @@
 version 0.35 by Michal Seta as part of a project called pddp proposed
 by Krzysztof Czaja \, managed and edited by Dave Sabine \, to build
 comprehensive documentation for Pd. Jonathan Wilkes revised the patch
-to conform to the PDDP template for Pd version 0.42.;
+to conform to the PDDP template for Pd version 0.42. Translated to
+Japanese by Toshinori Ohkouchi.;
 #X text 12 5 KEYWORDS control MIDI;
 #X text 12 45 DESCRIPTION read incoming Control Change messages;
 #X text 12 85 OUTLET_1 float;
@@ -66,10 +67,14 @@ by Olaf Matthes);
 #X obj 22 415 pddp/helplink cyclone/midiflush;
 #X restore 101 597 pd Related_objects;
 #X obj 483 3 ctlin;
-#X text 109 66 The [ctlin] object reads control change messages directly
-from the MIDI port. See a MIDI-specification chart near you for control
-change message numbers and their meannings (MIDI implementation documents
-are freely available on the internet in c=various forms).;
+#X text 109 66 [ctlin]は、MIDポートから、直接 MIDIコントロールチェンジメッセージを
+\
+読み込む。MIDIコントロールメッセージの数値とその意味するところについては
+\
+MIDIスペシフィケーションチャートを見てください。(c とか CC#が変数として書かれている
+\
+MIDI-implementation chartが、インターネットを 検索すると見つけられると思います)
+;
 #X text 98 305 (none);
 #X obj 78 338 cnv 17 3 17 empty \$0-pddp.cnv.let.1 0 5 9 0 16 -228856
 -162280 0;
@@ -83,35 +88,44 @@ are freely available on the internet in c=various forms).;
 #X floatatom 24 133 5 0 0 0 - - -;
 #X floatatom 37 112 5 0 0 0 - - -;
 #X floatatom 51 91 5 0 0 0 - - -;
-#X text 168 305 - [ctlin] reads data directly from the MIDI port;
+#X text 168 305 - [ctlin] MIDIポートから直接データを読み込む
+;
 #X obj 120 136 ctlin 64;
 #X floatatom 120 177 5 0 0 0 - - -;
 #X floatatom 165 161 5 0 0 0 - - -;
-#X text 187 134 Process only controller no. 64 on all channels;
-#X text 103 193 ctl. value;
-#X text 172 176 Chan. no.;
-#X obj 116 223 ctlin 64 1;
-#X text 193 224 Process only controller 64 on channel 1;
-#X floatatom 116 249 5 0 0 0 - - -;
-#X text 113 264 ctl. value;
-#X obj 362 570 pddp/pddplink all_about_midi_flags.pd -text all_about_midi_flags
+#X text 187 134 すべてのチャンネルの、コントローラ番号64のみ読み込む
 ;
-#X text 100 570 for an explanation of MIDI usage in Pd see:;
+#X text 103 193 コントローラの値;
+#X text 172 176 チャンネル番号;
+#X obj 116 223 ctlin 64 1;
+#X text 193 224 チャンネルの1の、コントローラ番号64のみ読み込む
+;
+#X floatatom 116 249 5 0 0 0 - - -;
+#X text 113 264 コントローラの値;
+#X obj 280 570 pddp/pddplink all_about_midi_flags.pd -text all_about_midi_flags
+;
+#X text 100 570 PdでのMIDIの使い方の説明については:　　　　　　　　　　　　　　　　　　を見てください。
+;
 #X obj 455 20 pddp/pddplink http://wiki.puredata.info/en/ctlin -text
 pdpedia: ctlin;
-#X text 11 23 read incoming Control Change messages;
-#X text 168 481 - (optional) controller number to process. If no arguments
-are present [ctlin] reads all controller data on all channels.;
-#X text 168 521 - (optional) channel number on which the controller
-is to be processed. If the second argument is absent [ctlin] reads
-all channels.;
-#X text 168 406 If only one argument is given \, [ctlin] provides the
-user with only 2 outlets: ctl. value and channel no. If 2 arguments
-are given (ctl. no. & chan. no.) only one outlet (ctl. value) is given.
+#X text 11 23 MIDI コントロールチェンジの読み込み;
+#X text 168 481 - (オプション) 読み込むコントローラ番号。もしない場合は
+\
+すべてのチャンネルの、すべてのコントローラーのデータが読み込まれる。
 ;
-#X text 168 337 - controller value.;
-#X text 168 362 - controller number.;
-#X text 168 387 - channel number.;
+#X text 168 521 - (オプション) 読み込むチャンネル番号。この２つ目の引数がない場合
+\
+すべてのチャンネルから読み込まれる。
+;
+#X text 168 406 もし引数がひとつだけの場合、[ctlin]には、コントロール値と
+\
+チャンネル番号の２つのアウトレットしかできない。引数を２つ(コントローラ番号と
+\
+チャンネル番号）与えると、アウトレットは1つ(コントロール値）だけになる。
+;
+#X text 168 337 - コントローラからの出力値;
+#X text 168 362 - コントローラの番号;
+#X text 168 387 - チャンネル番号.;
 #X text 80 481 1) float;
 #X text 80 521 2) float;
 #X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide
