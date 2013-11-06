@@ -1,4 +1,4 @@
-#N canvas 0 0 555 619 10;
+#N canvas 32 60 559 644 10;
 #X obj 0 595 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
 14 -228856 -66577 0;
 #X obj 0 0 cnv 15 552 40 empty \$0-pddp.cnv.header adc~ 3 12 0 18 -204280
@@ -52,33 +52,18 @@ pdpedia: adc~;
 #X text 99 338 signal;
 #X obj 79 338 cnv 17 3 70 empty \$0-pddp.cnv.let.n n 5 9 0 16 -228856
 -162280 0;
-#X obj 86 59 adc~;
+#X obj 87 59 adc~;
 #X obj 86 191 adc~ 5;
-#X text 144 192 a mono signal from channel 5;
 #X obj 86 222 adc~ 1 3 8 6 11 15 19 22 23 24 36;
-#X text 360 223 11 channels of audio;
 #X obj 86 252 adc~ 1 2 3 4 5 6 7 8;
-#X text 257 253 all channels on an 8-channel device;
-#X text 130 59 default stereo signals: same as:;
-#X obj 332 60 adc~ 1 2;
-#X text 168 438 - the object defaults to 2 incoming audio channels
-(usually a left and right stereo pair). Any number of arguments (integers)
-can be used to define one or multiple input channels - each integer
-corresponds to an input channel on your audio hardware.;
+#X obj 354 60 adc~ 1 2;
 #X text 80 438 n) float;
-#X text 169 338 - the number of outlets corresponds with the number
-of arguments - each outlet represents an input channel on your audio
-hardware which corresponds to the argument you provide. If no arguments
-are provided \, then there are two outlets which represent audio channels
-1 and 2 on your computers sound card.;
 #X obj 87 103 env~;
 #X floatatom 87 151 5 0 0 0 - - -;
 #X obj 87 127 spigot;
 #X obj 150 104 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X text 180 104 <- Click to get amplitude of channel 1;
 #X text 130 151 RMS amplitude (dB);
-#X text 169 300 - the inlet to [adc~] is not used.;
 #X text 99 300 (inactive);
 #X obj 5 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide
 ;
@@ -143,8 +128,26 @@ switch \, or disable both using the "-nosound" switch.;
 14 -204280 -1 0;
 #X text 7 2 [dac~] -nodac and -noadc;
 #X restore 102 567 pd defeating_audio_computation;
-#X text 12 23 audio input;
-#X connect 13 0 25 0;
-#X connect 25 0 27 0;
-#X connect 27 0 26 0;
-#X connect 28 0 27 1;
+#X text 180 104 <-クリックすると、チャンネル1の音量の値を出力する。
+;
+#X text 144 192 チャンネル5からのモノラルのシグナル出力
+;
+#X text 257 253 8チャンネルのデバイスの全チャンネル
+;
+#X text 169 300 - [adc~]の入力は使われていない。;
+#X text 169 338 - アウトレットの数は引数の個数に対応する。それぞれのアウトレットは
+\; オーディオインターフェイスのハードウェアの入力チャンネル数に対応している。
+\; もし、引数は何もなかったら、コンピュータのサウンドカードのチャンネル1と2に
+\; 対応した2つのアウトレットになる。;
+#X text 130 59 初期設定はステレオシグナルの入力。右と同じ。
+;
+#X text 12 23 オーディオの入力;
+#X text 168 438 - オブジェクトの初期設定は2つのオーディオ入力である（通常は左右のステレオ）。
+\; どんな数の引数（ただし整数）も1つまたは複数のチャンネルの設定に使うことが
+\; できる。それぞれの整数はオーディオインターフェイスの入力チャンネルに対応
+\; している。;
+#X text 360 223 11チャンネルのオーディオ;
+#X connect 13 0 19 0;
+#X connect 19 0 21 0;
+#X connect 21 0 20 0;
+#X connect 22 0 21 1;
