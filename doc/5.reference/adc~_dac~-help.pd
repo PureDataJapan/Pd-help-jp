@@ -108,4 +108,4 @@ switch \, or disable both using the "-nosound" switch.;
 #X text 96 58 [adc~]と[dac~]はそれぞれPdでのリアルタイムの音の入力と出力を実現します。
 \; 音の形式はデジタルやアナログです。以下の個別のヘルプパッチをクリックしてください。
 ;
-#X text 12 23 音の入力/出力;
+#X text 12 23 シグナルデータの入力/出力;
