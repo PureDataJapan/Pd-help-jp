@@ -1,4 +1,4 @@
-#N canvas 286 197 499 284 10;
+#N canvas -3 251 499 284 10;
 #X obj 19 108 sig~;
 #X obj 71 133 loadbang;
 #X obj 71 157 metro 100;
@@ -8,10 +8,10 @@
 #X text 316 257 updated for Pd version 0.42.;
 #X obj 20 132 abs~;
 #X obj 21 14 abs~;
-#X text 60 14 - absolute value;
-#X text 82 33 Passes nonnegative values unchanged \, but replaces negative
-ones with their (positive) inverses.;
-#X text 81 66 (turn DSP on to test):;
+#X text 82 33 正の数値を通過させる。負の数値は反転した正の数値に置き換えて通過させる。
+;
+#X text 81 66 （テストするにはDSPはオンにする）:;
+#X text 60 14 - シグナルの絶対値;
 #X connect 0 0 7 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
