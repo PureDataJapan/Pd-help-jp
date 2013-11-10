@@ -1,21 +1,26 @@
-#N canvas 60 57 422 472 10;
+#N struct 1026-line float a float b;
+#N struct 1026-sparks float x float y array a 1026-spark;
+#N struct 1026-spark float x float y float coefx float coefy float
+active float c;
+#N struct 1026-logo;
+#N canvas 60 57 700 538 10;
 #X obj 16 439 bng 15 150 50 0 \$0-credits-bng \$0-credits-bng empty
 20 7 0 12 -262144 -66577 -262144;
 #N canvas 0 22 450 300 \$0-gop 0;
+#X scalar 1026-line 1 319 \;;
+#X scalar 1026-sparks 10 0 \; 0 0 0 0 0 0 \; 0 0 0 0 0 0 \; 0 0 0 0
+0 0 \; 0 0 0 0 0 0 \; 0 0 0 0 0 0 \; 0 0 0 0 0 0 \; 0 0 0 0 0 0 \;
+0 0 0 0 0 0 \; 0 0 0 0 0 0 \; 0 0 0 0 0 0 \; \;;
 #X coords 0 0 20 320 20 320 2 0 0;
 #X restore 9 118 pd \$0-gop;
 #X obj 10 10 bng 25 250 50 0 empty \$0-nothing-at-all empty 17 7 0
 10 -2882 -1 -1;
 #X obj 35 211 pddp/pddplink ../manuals/Pd/License.html -text License.html
 ;
-#X text 35 237 Reference documentation for Pd is available in html
-format:;
 #X obj 35 261 pddp/pddplink ../1.manual/index.htm -text Local copy
 of Pd Manual;
 #X obj 35 281 pddp/pddplink http://www.crca.ucsd.edu/~msp/Pd_documentation/index.htm
 -text http://www.crca.ucsd.edu/~msp/Pd_documentation/index.htm;
-#X text 35 307 Much more documentation and other resources can be found
-at:;
 #X obj 35 327 pddp/pddplink http://www.puredata.info;
 #X obj 122 376 pddp/pddplink http://puredata.info/community/lists;
 #N canvas 495 39 531 400 (subpatch) 0;
@@ -66,6 +71,7 @@ float active float c;
 #X obj 205 163 f \$0;
 #X obj 205 213 s pd-\$0-logo-gop;
 #N canvas 284 86 198 93 \$0-logo-gop 0;
+#X scalar 1026-logo \;;
 #X coords 0 0 112 72 112 72 2 0 0;
 #X restore 10 10 pd \$0-logo-gop;
 #X obj 15 348 outlet;
@@ -250,15 +256,15 @@ Harry_Castle Christian_Feldbauer Kerry_Hagan Trevor_Johnson Gerda_Strobl
 John_Harrison Paloma_Oliveira Alexandre_Castonguay Alexandre_Porres
 Andrew_Brouse Marc_Fournel Darsha_Hewitt Kyd_Campbell Yvan_Volochine
 Max_Neupert Katja_Vetter Pavel_Piatruk Rostislav_Raykov Max_Neupert
-V_L Γεώργιος_Κερατζάκης Ricardo_Cedeño_Montaña Ivica_Ico_Bukvic
-Peter_Brinkmann Roman_Haefeli Olsen_Wolf Ricardo_Fabbri Björn_Lindig
-Patrice_Colet Daniel_Heckenberg Izaskun_Etxebarria lemonzi42 Nico_Auvieux
-dwan Jean_Sapristi András_Murányi Lorenzo_Sutton sad@flxer.net 松村_誠一郎
-Prim_Smik Johannes_Burström crazylion Liwei_Chou Pei-Wen_Liu 鴻旗_鄭
-Dieter_Kovačič Claude_Heiland-Allen Christian_Klippel Jarno_Seppänen
-Ville_Pulkki Christoph_Kummerer Mark_Williamson Iain_Mott Fred_Jan_Kraan
-Oswald_Berthold Pierre-Olivier_Boulant Chikashi_Miyama Ricardo_Palmieri
-Mathias_Bredholt Antoine_Villeret;
+V_L Γεώργιος_Κερατζάκης Ricardo_Cedeño_Montaña
+Ivica_Ico_Bukvic Peter_Brinkmann Roman_Haefeli Olsen_Wolf Ricardo_Fabbri
+Björn_Lindig Patrice_Colet Daniel_Heckenberg Izaskun_Etxebarria lemonzi42
+Nico_Auvieux dwan Jean_Sapristi András_Murányi Lorenzo_Sutton sad@flxer.net
+松村_誠一郎 Prim_Smik Johannes_Burström crazylion Liwei_Chou
+Pei-Wen_Liu 鴻旗_鄭 Dieter_Kovačič Claude_Heiland-Allen Christian_Klippel
+Jarno_Seppänen Ville_Pulkki Christoph_Kummerer Mark_Williamson Iain_Mott
+Fred_Jan_Kraan Oswald_Berthold Pierre-Olivier_Boulant Chikashi_Miyama
+Ricardo_Palmieri Mathias_Bredholt Antoine_Villeret;
 #X obj 11 411 + 20;
 #X obj 11 328 line;
 #X obj 91 7 r \$0-credits-bng;
@@ -436,20 +442,28 @@ Mathias_Bredholt Antoine_Villeret;
 #X coords 0 -1 1 1 112 72 2 10 10;
 #X restore 10 46 pd;
 #X text 9 31 |;
-#X text 131 48 A real-time graphical programming environment;
-#X text 131 65 for live interactive computer music \, Pd works;
-#X text 131 82 on SGI machines \, Microsoft Windows \, Linux \,;
-#X text 131 99 and Mac OSX.;
-#X text 36 165 Pd is copyrighted but is free for you to use for any
-reasonable purpose under the GNU GPL version 3 . Follow the link for
-more details about the license:;
-#X msg 115 130 0.43.1;
-#X text 34 351 You can ask questions and get help in a variety of forums:
-;
+#X msg 115 130 0.43.4-extended;
 #X text 36 376 mailing lists:;
 #X text 36 389 web forums:;
-#X obj 122 389 pddp/pddplink http://puredata.info/community/forums;
+#X obj 122 389 pddp/pddplink http://puredata.info/community/forums
+;
 #X text 36 402 IRC chatroom:;
 #X obj 122 402 pddp/pddplink irc://irc.freenode.net/dataflow;
-#X connect 2 0 10 0;
-#X connect 10 1 17 0;
+#X text 131 82;
+#X text 131 65;
+#X text 131 99;
+#X text 131 48 Pdはライブ・インタラクティブ・コンピュータミュー
+\; ジックのリアルタイムグラフィカルプログラミング環境
+\; です。SGI（シリコングラフィックス）マシン、マイク
+\; ロソフト Windows、Linux、Mac OSXで動作します。;
+#X text 36 165 Pdは著作権で保護されていますが、GNU GPL
+バージョン3ライセンスに基づ \; いて自由に使用できます。詳細は以下のリンクを参照してください。
+;
+#X text 35 237 Pdの参考ドキュメントはhtmlフォーマットであります。:
+;
+#X text 35 307 さらに多くのドキュメントやその他のリソースは以下のサイトにあります。:
+;
+#X text 34 351 様々なフォーラムで質問をしたりサポートを得ることができます。:
+;
+#X connect 2 0 8 0;
+#X connect 8 1 10 0;
