@@ -1,4 +1,4 @@
-#N canvas -3 251 499 284 10;
+#N canvas 0 251 499 284 10;
 #X obj 19 108 sig~;
 #X obj 71 133 loadbang;
 #X obj 71 157 metro 100;
