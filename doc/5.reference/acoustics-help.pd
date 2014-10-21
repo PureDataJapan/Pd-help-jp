@@ -1,4 +1,4 @@
-#N canvas 0 0 555 619 10;
+#N canvas 0 22 555 619 10;
 #X obj 0 595 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
 14 -228856 -66577 0;
 #X obj 0 0 cnv 15 552 40 empty \$0-pddp.cnv.header acoustics 3 12 0
@@ -50,8 +50,6 @@ Wilkes revised the patch to conform to the PDDP template for Pd version
 #X text 98 441 float;
 #X text 98 468 list;
 #X text 98 512 float;
-#X text 158 468 - lists will be truncated \, and the first element
-will be used as input.;
 #X obj 392 250 ftom;
 #X obj 392 198 mtof;
 #X floatatom 392 170 0 0 0 0 - - -;
@@ -75,27 +73,31 @@ will be used as input.;
 #X obj 497 3 powtodb;
 #X obj 433 20 pddp/pddplink http://wiki.puredata.info/en/acoustics
 -text pdpedia: acoustics;
-#X text 11 23 control objects for conversion;
 #X obj 110 197 pddp/pddplink dbtopow-help.pd -text dbtopow-help;
 #X obj 110 251 pddp/pddplink powtodb-help.pd -text powtodb-help;
 #X obj 282 197 pddp/pddplink dbtorms-help.pd -text dbtorms-help;
 #X obj 282 251 pddp/pddplink rmstodb-help.pd -text rmstodb-help;
 #X obj 426 197 pddp/pddplink ftom-help.pd -text ftom-help;
 #X obj 426 251 pddp/pddplink mtof-help.pd -text mtof-help;
-#X text 158 441 - the incoming value.;
 #X obj 98 569 pddp/pddplink all_about_acoustic_conversions.pd;
-#X text 87 126 Click on the links next to each object for more help:
+#X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide
 ;
-#X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide;
-#X connect 15 0 19 0;
-#X connect 16 0 18 0;
-#X connect 17 0 16 0;
-#X connect 18 0 15 0;
+#X text 11 23 単位変換のためのコントロールオブジェクト
+;
+#X text 158 441 - 入力値;
+#X text 87 126 より詳細な情報を表示するには、以下の各オブジェクトの横のリンクをクリックしてください。
+;
+#X text 158 468 - リストは第１要素のみ入力に使用され、それより後は切り捨てられる。
+;
+#X connect 14 0 18 0;
+#X connect 15 0 17 0;
+#X connect 16 0 15 0;
+#X connect 17 0 14 0;
+#X connect 19 0 22 0;
 #X connect 20 0 23 0;
-#X connect 21 0 24 0;
+#X connect 22 0 20 0;
 #X connect 23 0 21 0;
-#X connect 24 0 22 0;
+#X connect 24 0 27 0;
 #X connect 25 0 28 0;
-#X connect 26 0 29 0;
+#X connect 27 0 25 0;
 #X connect 28 0 26 0;
-#X connect 29 0 27 0;

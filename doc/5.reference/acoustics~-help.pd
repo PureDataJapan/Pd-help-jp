@@ -1,4 +1,4 @@
-#N canvas 0 0 555 619 10;
+#N canvas 0 22 555 619 10;
 #X obj 0 595 cnv 15 550 21 empty \$0-pddp.cnv.footer empty 20 12 0
 14 -228856 -66577 0;
 #X obj 0 0 cnv 15 550 40 empty \$0-pddp.cnv.header (acoustics~) 3 12
@@ -49,11 +49,8 @@ Wilkes revised the patch to conform to the PDDP template for Pd version
 -162280 0;
 #X obj 433 20 pddp/pddplink http://wiki.puredata.info/en/acoustics
 -text pdpedia: acoustics;
-#X text 11 23 signal objects for conversion;
 #X text 98 432 signal;
 #X text 98 508 signal;
-#X text 158 508 - the outgoing signal.;
-#X text 158 432 - the incoming signal.;
 #X floatatom 68 136 0 0 0 0 - - -;
 #X obj 68 160 dbtopow~;
 #X obj 67 217 snapshot~;
@@ -91,35 +88,41 @@ Wilkes revised the patch to conform to the PDDP template for Pd version
 #X obj 268 180 pddp/pddplink dbtorms~-help.pd -text dbtorms~-help;
 #X obj 88 180 pddp/pddplink dbtopow~-help.pd -text dbtopow~-help;
 #X text 98 452 float;
-#X text 158 452 - an incoming float will be converted to a signal.
-;
 #X text 98 472 list;
-#X text 158 472 - a list will be truncated to the first element.;
 #X obj 98 569 pddp/pddplink all_about_acoustic_conversions.pd;
-#X text 97 96 Click on the links under each object for more help:;
-#X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide;
+#X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide
+;
 #X obj 455 51 pddp/dsp;
+#X text 11 23 シグナルのための変換オブジェクト;
+#X text 97 96 より詳細な情報を表示するには、以下の各オブジェクトの横のリンクをクリックしてください。
+;
+#X text 158 432 - 入力シグナル;
+#X text 158 452 - 入力された実数はシグナルに変換される。
+;
+#X text 158 472 - リストは第１要素のみ入力に使用され、それより後は切り捨てられる。
+;
+#X text 158 508 - 出力シグナル;
+#X connect 14 0 15 0;
+#X connect 15 0 16 0;
+#X connect 16 0 17 0;
 #X connect 17 0 18 0;
 #X connect 18 0 19 0;
 #X connect 19 0 20 0;
-#X connect 20 0 21 0;
-#X connect 21 0 22 0;
-#X connect 22 0 23 0;
-#X connect 30 0 35 0;
-#X connect 31 0 32 0;
-#X connect 32 0 36 0;
-#X connect 33 0 34 0;
-#X connect 35 0 31 0;
-#X connect 36 0 33 0;
-#X connect 37 0 42 0;
-#X connect 38 0 39 0;
-#X connect 39 0 43 0;
-#X connect 40 0 41 0;
-#X connect 42 0 38 0;
-#X connect 43 0 40 0;
-#X connect 44 0 19 0;
-#X connect 44 0 22 0;
-#X connect 45 0 31 0;
-#X connect 45 0 33 0;
-#X connect 46 0 38 0;
-#X connect 46 0 40 0;
+#X connect 27 0 32 0;
+#X connect 28 0 29 0;
+#X connect 29 0 33 0;
+#X connect 30 0 31 0;
+#X connect 32 0 28 0;
+#X connect 33 0 30 0;
+#X connect 34 0 39 0;
+#X connect 35 0 36 0;
+#X connect 36 0 40 0;
+#X connect 37 0 38 0;
+#X connect 39 0 35 0;
+#X connect 40 0 37 0;
+#X connect 41 0 16 0;
+#X connect 41 0 19 0;
+#X connect 42 0 28 0;
+#X connect 42 0 30 0;
+#X connect 43 0 35 0;
+#X connect 43 0 37 0;

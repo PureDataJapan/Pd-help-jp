@@ -1,4 +1,4 @@
-#N canvas 0 0 555 619 10;
+#N canvas 0 22 555 619 10;
 #X obj 0 595 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
 14 -228856 -66577 0;
 #X obj 0 0 cnv 15 552 40 empty \$0-pddp.cnv.header bang 3 12 0 18 -204280
@@ -31,7 +31,6 @@ Pd version 0.42.;
 0 13 -228856 -1 0;
 #X obj 78 338 cnv 17 3 17 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
 -162280 0;
-#X text 98 413 (none);
 #N canvas 40 482 428 108 Related_objects 0;
 #X obj 21 42 trigger;
 #X obj 191 43 loadbang;
@@ -57,7 +56,6 @@ pdpedia: bang;
 #X msg 288 147 walk the cat;
 #X obj 288 175 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
 -1;
-#X text 310 173 <- gui "bng" object;
 #X text 98 337 anything;
 #N canvas 57 48 428 509 More_bang_objects 0;
 #X obj 23 42 bang;
@@ -110,25 +108,30 @@ it "bng".;
 #X connect 13 0 12 1;
 #X connect 15 0 12 0;
 #X restore 100 473 pd More_bang_objects;
-#X text 98 441 Many objects in Pd output a "bang" message. Click the
-subpatch below to read about the most common ones:;
 #X obj 100 569 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X text 98 498 It is important to note that "bang" is not boolean.
-It's neither a zero or a one \; it's not true or false \; it's just
-"bang". For a boolean object \, you should check out [toggle]:;
-#X text 11 23 output a "bang" message whatever the input;
-#X text 122 567 <- Right click and choose "Help" for [toggle] helpfile.
+#X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide
 ;
-#X text 168 381 - the [bang] object always outputs a bang message.
-;
-#X text 168 337 - [bang] takes any message supplied to its inlet and
-outputs a bang message in response.;
-#X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide;
 #X obj 521 3 b;
 #X text 501 3 or;
-#X connect 15 0 17 0;
-#X connect 16 0 17 0;
-#X connect 17 0 14 0;
-#X connect 19 0 20 0;
-#X connect 20 0 18 0;
+#X text 310 173 <-GUIの"bng"オブジェクト;
+#X text 11 23 なにが入力されても"bang"メッセージとして出力する
+;
+#X text 168 337 -[bang]はインレットに入力されるあらゆるメッセージに反応して、bang
+\; メッセージを出力する。;
+#X text 168 381 -[bang]オブジェクトは常にbangメッセージを出力する。
+;
+#X text 98 413 （なし）;
+#X text 98 441 Pdの多くのオブジェクトは"bang"メッセージを出力する。以下のサブパッチをクリックすると、
+\; 同様のオブジェクトについて確認できる。:;
+#X text 122 567 <-右クリックして"ヘルプ"を選択すると[toggle]のヘルプパッチが開きます。
+;
+#X text 98 498 "bang"は真偽のブーレアン型のデータではないということを意識することは大切である。
+\; それは「０」でも「１」でもない。 \; 「真」でも「偽」でもない。
+\; それはただの"bang"である。ブーレアン型のオブジェクトとしては[toggle]がある:
+;
+#X connect 14 0 16 0;
+#X connect 15 0 16 0;
+#X connect 16 0 13 0;
+#X connect 18 0 19 0;
+#X connect 19 0 17 0;

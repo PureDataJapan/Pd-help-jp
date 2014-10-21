@@ -1,4 +1,4 @@
-#N canvas 0 0 555 619 10;
+#N canvas 0 22 556 636 10;
 #X obj 0 595 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
 14 -228856 -66577 0;
 #X obj 0 0 cnv 15 552 40 empty \$0-pddp.cnv.header (array) 3 12 0 18
@@ -30,10 +30,8 @@ Jonathan Wilkes to conform to the PDDP template for Pd version 0.42.
 #X obj 21 43 table;
 #X restore 102 598 pd Related_objects;
 #X text 80 375 1) symbol atom;
-#X text 98 238 (none);
-#X text 98 264 (none);
 #X text 80 390 2) float;
-#N canvas 0 0 450 300 (subpatch) 0;
+#N canvas 0 22 450 300 (subpatch) 0;
 #X array garray 100 float 3;
 #A 0 -0.425444 -0.481432 -0.535517 -0.587484 -0.637133 -0.684269 -0.728706
 -0.770268 -0.808792 -0.844127 -0.876131 -0.904665 -0.92963 -0.950928
@@ -59,24 +57,18 @@ pdpedia: garray;
 #X floatatom 355 136 5 0 0 0 - - -;
 #X obj 331 89 metro 150;
 #X obj 355 158 osc~ 1000;
-#X text 93 557 For help on using graphs \, see:;
 #X obj 93 572 pddp/pddplink graph-help.pd -text graph-help;
 #X obj 93 504 pddp/pddplink all_about_arrays.pd -text all_about_arrays
 ;
-#X text 167 375 - the name of the array. (Must be unique.);
-#X text 167 390 - size of the array. (Default is 100.);
-#X text 167 405 - (checkbox) save array contents with patch.;
 #X text 80 405 3) float;
 #X text 80 420 4) float;
-#X text 167 435 - (checkbox) delete the array (but not the graph).
-;
 #X text 80 435 5) float;
-#X text 167 420 - (radio) visual display style of elements.;
-#X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide;
+#X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide
+;
 #N canvas 70 34 428 450 Graphs_and_Garrays 0;
 #X obj 1 1 cnv 15 425 20 empty \$0-pddp.cnv.subheading empty 3 12 0
 14 -204280 -1 0;
-#N canvas 0 0 450 300 (subpatch) 0;
+#N canvas 0 22 450 300 (subpatch) 0;
 #X array \$0-graphs-vs-garrays 100 float 3;
 #A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -0.0666666
 -0.0733333 -0.0866666 -0.106667 -0.106667 -0.106667 -0.106667 -0.0999999
@@ -108,19 +100,11 @@ element and choose "Help" \, you'll be taken to the help patch for
 graphical arrays.;
 #X text 20 253 It's hard work finding help on this!;
 #X restore 97 465 pd Graphs_and_Garrays;
-#X text 11 23 graphical array from the "Put" menu;
-#X text 80 307 You can't access "Put" menu array arguments directly
-\, but you can change the properties by right-clicking on the containing
-graph and choosing "Properties". (You can also send messages to the
-array: see "more_info" below.);
-#X text 80 360 "Put" Menu Array Properties;
-#X text 94 486 For more help on arrays in Pd \, see:;
 #X obj 93 522 pddp/pddplink ../2.control.examples/15.array.pd;
 #X obj 455 51 pddp/dsp;
 #X obj 93 540 pddp/pddplink ../2.control.examples/16.more.arrays.pd
 ;
-#X text 96 213 A "Put" menu array is created inside a graph.;
-#N canvas 0 0 450 300 (subpatch) 0;
+#N canvas 0 22 450 300 (subpatch) 0;
 #X array \$0-array 100 float 3;
 #A 0 -0.684486 -0.621979 -0.555232 -0.484682 -0.410829 -0.334176 -0.255242
 -0.174561 -0.0926915 -0.01019 0.0723822 0.154459 0.235482 0.314901
@@ -139,8 +123,32 @@ array: see "more_info" below.);
 #X coords 0 1 99 -1 200 140 1;
 #X restore 105 62 graph;
 #X obj 331 185 tabwrite~ \$0-array;
-#X connect 13 0 17 0;
-#X connect 15 0 17 1;
-#X connect 16 0 18 0;
-#X connect 17 0 41 0;
-#X connect 18 0 41 0;
+#X text 96 213 "Put"メニューのアレイはグラフの内側に作られる。
+;
+#X text 98 238 （なし）;
+#X text 98 264 （なし）;
+#X text 80 307 "Put"メニューからのアレイの引数に直接アクセスすることができないが、グラフを右クリックして
+\; "プロパティ"を選択すると、プロパティの内容を変更できる。
+\; （アレイにメッセージを送ることもできる。詳細は"more_info"を参照）
+;
+#X text 80 360 "Put"メニューのアレイのプロパティ;
+#X text 167 375 -アレイの名前。（固有でないといけない）
+;
+#X text 167 435 -（チェックボックス）アレイを削除（しかしグラフは削除しない）
+;
+#X text 167 420 -（ラジオボタン）描画方法の選択肢;
+#X text 167 405 -（チェックボックス）アレイの内容をパッチと共に保存する。
+;
+#X text 167 390 -アレイの名前。（固有でないといけない）
+;
+#X text 93 557 グラフの使用のヘルプついては以下を参照:
+;
+#X text 94 486 さらに多くのアレイのヘルプについては以下を参照:
+;
+#X text 11 23 "Put"メニューからのグラフィカルなアレイ
+;
+#X connect 11 0 15 0;
+#X connect 13 0 15 1;
+#X connect 14 0 16 0;
+#X connect 15 0 28 0;
+#X connect 16 0 28 0;

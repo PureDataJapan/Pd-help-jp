@@ -1,4 +1,4 @@
-#N canvas 0 0 555 619 10;
+#N canvas 0 22 555 619 10;
 #X obj 0 595 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
 14 -228856 -66577 0;
 #X obj 0 0 cnv 15 552 40 empty \$0-pddp.cnv.header bang~ 3 12 0 18
@@ -28,7 +28,6 @@ by Jonathan Wilkes to conform to the PDDP template for Pd version 0.42.
 0 13 -228856 -1 0;
 #X obj 78 454 cnv 17 3 17 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
 -162280 0;
-#X text 98 541 (none);
 #N canvas 31 477 428 114 Related_objects 0;
 #X obj 15 34 print~;
 #X obj 72 34 bang;
@@ -44,7 +43,6 @@ by Jonathan Wilkes to conform to the PDDP template for Pd version 0.42.
 pdpedia: bang~;
 #X obj 116 213 bang~;
 #X obj 116 281 print;
-#X text 228 169 click to test;
 #X obj 116 249 spigot;
 #X msg 190 253 dsp \$1;
 #X obj 190 280 s pd;
@@ -55,22 +53,26 @@ pdpedia: bang~;
 #X obj 340 170 loadbang;
 #X msg 340 196 dsp 0;
 #X obj 340 221 s pd;
-#X text 11 23 output a "bang" message after each DSP cycle;
-#X text 168 453 - the inlet of [bang~] is not used.;
-#X text 168 491 - [bang~] outputs a bang after each DSP cycle (at the
-same logical time as the DSP cycle). This is primarily useful for sampling
-the outputs of analysis algorithms.;
 #X text 98 453 (inactive);
-#X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide;
-#X connect 14 0 17 0;
-#X connect 17 0 15 0;
+#X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide
+;
+#X text 168 491 -[bang~]はDSPの各サイクルごと"bang"メッセージを出力する（DSPサイクルの
+\; ロジカルタイミングと同じ）。これは主として解析アルゴリズムの出力からデータ
+\; を抽出する際に有効である。;
+#X text 168 453 -[bang~]のインレットは使用しない。;
+#X text 228 169 クリックしてテスト;
+#X text 11 23 DSPのサイクルに則して"bang"メッセージを出力
+;
+#X text 98 541 （なし）;
+#X connect 13 0 15 0;
+#X connect 15 0 14 0;
+#X connect 16 0 17 0;
 #X connect 18 0 19 0;
-#X connect 20 0 21 0;
-#X connect 20 0 23 0;
-#X connect 21 0 17 1;
-#X connect 21 0 18 0;
-#X connect 22 0 17 1;
-#X connect 22 0 18 0;
-#X connect 23 0 22 0;
-#X connect 24 0 25 0;
-#X connect 25 0 26 0;
+#X connect 18 0 21 0;
+#X connect 19 0 15 1;
+#X connect 19 0 16 0;
+#X connect 20 0 15 1;
+#X connect 20 0 16 0;
+#X connect 21 0 20 0;
+#X connect 22 0 23 0;
+#X connect 23 0 24 0;

@@ -1,4 +1,4 @@
-#N canvas 0 0 555 619 10;
+#N canvas 252 131 555 619 10;
 #X obj 0 595 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
 14 -228856 -66577 0;
 #X obj 0 0 cnv 15 552 40 empty \$0-pddp.cnv.header dbtopow 3 12 0 18
@@ -56,13 +56,14 @@ Wilkes revised the patch to conform to the PDDP template for Pd version
 #X obj 445 20 pddp/pddplink http://wiki.puredata.info/en/dbtopow -text
 pdpedia: dbtopow;
 #X obj 239 179 dbtopow;
-#X text 11 23 convert dB to power units;
-#X text 168 468 - lists will be truncated \, and the first element
-will be used as input.;
-#X text 109 242 The [dbtopow] object converts decibels to power units
-\, equal to the square of the "RMS" amplitude.;
 #X text 98 468 list;
 #X obj 99 570 pddp/pddplink all_about_acoustic_conversions.pd;
-#X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide;
+#X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide
+;
+#X text 11 23 dBをパワーに変換する;
+#X text 168 468 - リストは第１要素のみ入力に使用され、それより後は切り捨てられる。
+;
+#X text 109 242 [dptopow]オブジェクトは音量をデジベルから、RMS振幅の二乗に等しい
+\; 音響パワーの単位に変換します。;
 #X connect 11 0 17 0;
 #X connect 17 0 10 0;

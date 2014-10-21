@@ -1,4 +1,4 @@
-#N canvas 0 0 555 619 10;
+#N canvas 378 22 555 619 10;
 #X obj 0 595 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
 14 -228856 -66577 0;
 #X obj 0 0 cnv 15 552 40 empty \$0-pddp.cnv.header rmstodb 3 12 0 18
@@ -57,13 +57,14 @@ Wilkes revised the patch to conform to the PDDP template for Pd version
 #X obj 445 20 pddp/pddplink http://wiki.puredata.info/en/rmstodb -text
 pdpedia: rmstodb;
 #X obj 239 189 rmstodb;
-#X text 109 241 The rmstodb object converts from linear ("RMS") amplitude
-to decibels \, so that an "RMS" of 1 corresponds to 100 dB. Zero amplitude
-(strictly speaking \, minus infinity dB) is clipped to zero dB;
-#X text 11 23 convert linear amplitude to dB;
-#X text 158 465 - lists will be truncated \, and the first element
-used as input.;
 #X obj 98 569 pddp/pddplink all_about_acoustic_conversions.pd;
-#X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide;
+#X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide
+;
+#X text 158 465 - リストは第１要素のみ入力に使用され、それより後は切り捨てられる。
+;
+#X text 109 241 [rmstodb]オブジェクトは線形（RMS）音量からデシベルに変換します。
+\; ゆえに"RMS"の1は100dBに等しくなります。 \; ここでは音量ゼロ（厳密にはマイナス無限dB）はゼロdBとなります。
+;
+#X text 11 23 線形の音量をdBに変換する;
 #X connect 11 0 18 0;
 #X connect 18 0 10 0;

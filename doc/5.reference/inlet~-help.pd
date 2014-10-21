@@ -70,7 +70,7 @@ Jonathan Wilkes to conform to the PDDP template for Pd version 0.42.
 #X obj 451 20 pddp/pddplink http://wiki.puredata.info/en/inlet~ -text
 pdpedia: inlet~;
 #X text 98 385 signal;
-#N canvas 61 152 428 466 up/downsampling 1;
+#N canvas 61 152 428 466 up/downsampling 0;
 #X obj 30 396 print~;
 #X obj 48 370 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -162,24 +162,23 @@ extra samples.;
 #X text 80 477 1) symbol atom;
 #X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide
 ;
-#X text 168 385 - the [inlet~] object outputs the signal sent to the
-inlet of the subpatch in which it is found. When multiple [inlet~]
-or [inlet] objects are in one subpatch \, their horizontal order corresponds
-with the inlets drawn on the containing object in the parent patch.
-;
 #X text 98 353 (なし);
 #X text 11 23 サブパッチのためのオーディオシグナルの入口
 ;
 #X text 96 182 メッセージの入力と出力;
 #X text 339 176 オーディオの入力と出力;
-#X text 168 477 -（オプション）引数"hold"はサンプル&ホールドのupsampling/downsampling
-\; を実行します。引数"lin"は線形のupsampling/downsamplingを実行します。
-\; 詳細は以下のサブパッチを参照してください:;
 #X text 98 77 [inlet~]オブジェクトは親パッチのオブジェクトからサブパッチの中のオブジェクトへオーディオ
-\; シグナルが送られるようにします。;
+\; シグナルが送られるようにする。;
 #X text 98 127 以下のサブパッチは[inlet]、[inlet~]、[outlet]そして[outlet~]オブジェクトを使って、
-\; サブパッチの外からデータを取り込み、外へデータを出していく方法を示しています。
+\; サブパッチの外からデータを取り込み、外へデータを出していく方法を示している。
 ;
+#X text 168 385 -[inlet~]オブジェクトはサブパッチのインレットに送られるオーディオシグナルを
+\; 出力する。サブパッチの中に複数の[inlet~][inlet]がある場合、水平での並び順
+\; は親パッチの中にあるサブパッチのインレットの配置に連動する。
+;
+#X text 168 477 -（オプション）引数"hold"はサンプル&ホールドのupsampling/downsamplingを
+\; 実行します。引数"lin"は線形のupsampling/downsamplingを実行する。
+\; 詳細は以下のサブパッチを参照:;
 #X connect 10 0 14 1;
 #X connect 11 0 14 0;
 #X connect 13 0 9 0;

@@ -1,4 +1,4 @@
-#N canvas 0 0 555 619 10;
+#N canvas 20 22 555 619 10;
 #X obj 0 595 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
 14 -228856 -66577 0;
 #X obj 0 0 cnv 15 552 40 empty \$0-pddp.cnv.header osc~ 3 12 0 18 -204280
@@ -36,12 +36,10 @@ Wilkes revised the patch to conform to the PDDP template for Pd version
 #X restore 102 597 pd Related_objects;
 #X obj 78 367 cnv 17 3 35 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
 -162280 0;
-#X text 98 366 float;
 #X obj 78 465 cnv 17 3 17 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
 -162280 0;
 #X obj 78 410 cnv 17 3 35 empty \$0-pddp.cnv.let.1 1 5 9 0 16 -228856
 -162280 0;
-#X text 98 409 float;
 #X obj 492 3 osc~;
 #X obj 465 20 pddp/pddplink http://wiki.puredata.info/en/osc~ -text
 pdpedia: osc~;
@@ -53,46 +51,53 @@ pdpedia: osc~;
 #X msg 262 164 0 100;
 #X text 314 134 on;
 #X text 311 163 off;
-#X text 280 188 envelope;
-#X text 280 201 generator;
-#X text 227 114 amplitude controls:;
-#X text 226 270 audio output;
 #X obj 83 228 metro 500;
-#X text 65 270 graph the output;
-#X text 89 132 change frequency;
-#X text 91 120 incoming numbers;
 #X obj 65 155 osc~ 1000;
-#N canvas 0 0 450 300 (subpatch) 0;
+#N canvas 0 22 450 300 (subpatch) 0;
 #X array \$0-array 100 float 0;
 #X coords 0 -1 100 1 150 100 1;
 #X restore 374 172 graph;
-#X text 98 386 signal;
-#X text 98 464 signal;
 #X obj 83 203 loadbang;
-#X text 98 429 list;
-#X text 11 23 cosine wave oscillator;
 #X text 168 511 - sets the initial frequency. If the argument is supplied
 \, [osc~] takes floating-point messages to change frequency. If no
 argument is supplied \, the input is taken to be an audio signal.;
-#X text 168 366 - an incoming float changes the frequency.;
-#X text 168 386 - an incoming signal changes the frequency.;
-#X text 167 409 - a float to the right inlet resets the phase.;
-#X text 167 429 - a list will be truncated to the first element.;
-#X text 80 511 1) float;
-#X text 167 464 - the outgoing cosine wave.;
-#X text 22 60 The [osc~] object outputs a cosine wave. With a floating-point
-argument \, [osc~] takes floating-point messages to change frequency.
+#X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide
 ;
-#X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide;
 #X obj 455 51 pddp/dsp;
 #X obj 66 253 tabwrite~ \$0-array;
-#X connect 16 0 15 0;
-#X connect 17 0 31 0;
-#X connect 18 0 16 1;
-#X connect 19 0 18 0;
-#X connect 20 0 18 0;
-#X connect 27 0 48 0;
-#X connect 31 0 16 0;
-#X connect 31 0 48 0;
-#X connect 35 0 27 0;
-#X connect 35 0 27 0;
+#X text 280 188 エンベロープ;
+#X text 280 201 ジェネレータ;
+#X text 227 114 音量のコントロール:;
+#X text 91 120 入力する数値が周波数 \; を変更する。
+;
+#X text 22 60 [osc~]オブジェクトはコサイン波を出力します。
+\; 実数の数値が引数になっていたり、左インレットに入力されると
+\; [osc~]は周波数を設定/変更する。;
+#X text 11 23 コサイン波オシレーター;
+#X text 226 270 オーディオ出力;
+#X text 65 270 出力をグラフ化する;
+#X text 167 429 -リストの場合は第１要素だけが使われる。
+;
+#X text 167 409 -右インレットに入力する数値が位相をリセットする。
+;
+#X text 168 386 -入力するシグナル（signal）が周波数を変更する。
+;
+#X text 168 366 -入力する数値（float）が周波数を変更する。
+;
+#X text 98 429 リスト;
+#X text 98 386 シグナル;
+#X text 98 366 数値;
+#X text 98 409 数値;
+#X text 98 464 シグナル;
+#X text 80 511 1) 数値;
+#X text 167 464 -出力されるコサイン波;
+#X connect 14 0 13 0;
+#X connect 15 0 22 0;
+#X connect 16 0 14 1;
+#X connect 17 0 16 0;
+#X connect 18 0 16 0;
+#X connect 21 0 28 0;
+#X connect 22 0 14 0;
+#X connect 22 0 28 0;
+#X connect 24 0 21 0;
+#X connect 24 0 21 0;

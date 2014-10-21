@@ -1,4 +1,4 @@
-#N canvas 0 0 555 619 10;
+#N canvas 0 22 555 619 10;
 #X obj 0 595 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
 14 -228856 -66577 0;
 #X obj 0 0 cnv 15 552 40 empty \$0-pddp.cnv.header powtodb 3 12 0 18
@@ -56,13 +56,14 @@ Wilkes revised the patch to conform to the PDDP template for Pd version
 #X obj 474 3 powtodb;
 #X obj 445 20 pddp/pddplink http://wiki.puredata.info/en/powtodb -text
 pdpedia: powtodb;
-#X text 11 23 convert from power units to dB;
-#X text 158 463 - lists will be truncated \, and the first element
-used as input.;
 #X obj 239 189 powtodb;
-#X text 109 252 The [powtodb] object converts power units \, equal
-to the square of the "RMS" amplitude \, to decibels.;
 #X obj 98 566 pddp/pddplink all_about_acoustic_conversions.pd;
-#X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide;
-#X connect 11 0 20 0;
-#X connect 20 0 10 0;
+#X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide
+;
+#X text 11 23 パワーをdBに変換する;
+#X text 109 252 [powtodb]オブジェクトは音をRMS振幅の二乗に等しい音響パワーから、
+\; デジベルの単位に変換します。;
+#X text 158 463 - リストは第１要素のみ入力に使用され、それより後は切り捨てられる。
+;
+#X connect 11 0 18 0;
+#X connect 18 0 10 0;
