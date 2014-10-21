@@ -1,4 +1,4 @@
-#N canvas 0 0 555 619 10;
+#N canvas 0 22 555 619 10;
 #X obj 0 595 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
 14 -228856 -66577 0;
 #X obj 0 0 cnv 15 552 40 empty \$0-pddp.cnv.header vu 3 12 0 18 -204280
@@ -47,8 +47,6 @@ vu;
 #X text 98 312 list;
 #X text 98 396 float;
 #X text 98 412 list;
-#X text 168 312 - a 2-item list will be distributed to the two inlets
-;
 #X text 98 444 float;
 #X obj 78 466 cnv 17 3 17 empty \$0-pddp.cnv.let.1 1 5 9 0 16 -228856
 -162280 0;
@@ -70,7 +68,7 @@ not instantiate correctly.;
 0 0;
 #X connect 6 0 0 0;
 #X restore 170 549 pd vu-creation-arguments;
-#N canvas 75 10 428 611 Changing_GUI_Properties 0;
+#N canvas 75 22 428 611 Changing_GUI_Properties 0;
 #X obj 1 1 cnv 15 425 20 empty \$0-pddp.cnv.subheading empty 3 12 0
 14 -204280 -1 0;
 #X floatatom 130 62 1 0 1 0 - #0-scale -;
@@ -169,7 +167,7 @@ not instantiate correctly.;
 #X connect 4 0 1 0;
 #X coords 0 -1 1 1 48 42 2 100 100;
 #X restore 22 332 pd flash-time;
-#N canvas 0 0 306 317 flash-time 0;
+#N canvas 0 22 306 317 flash-time 0;
 #X obj 96 521 outlet;
 #X obj 162 230 t b f;
 #X obj 96 268 +;
@@ -294,26 +292,12 @@ not instantiate correctly.;
 #X connect 48 0 41 1;
 #X connect 57 0 11 0;
 #X restore 172 375 pd Changing_GUI_Properties;
-#X text 97 345 see the following subpatch for messages that change
-the gui-properties of [vu]:;
-#X text 168 493 - creating a [vu] without any arguments will set default
-values for all gui-properties. See the subpatch below to learn how
-to dynamically instantiate a [vu] object with custom properties:;
-#X text 170 239 Use the UP- \, DOWN- \, LEFT- or RIGHT-key to move
-a selected gui-object. Right-click and choose "Properties" to modify
-its appearance.;
-#X text 341 111 and receive names. Right-;
-#X text 341 126 click and choose;
-#X text 340 142 "Properties" to set them \,;
-#X text 341 156 or change them with messages;
-#X text 341 170 (see the subpatch below);
 #X floatatom 259 90 7 -110 20 1 dB - -;
 #X obj 42 48 tgl 15 1 empty empty empty 8 -8 0 10 -262144 -1 -1 0 1
 ;
 #X obj 43 125 vu 15 120 foo7_rcv vu-meter 60 0 0 10 -1 -355 1 0;
 #X floatatom 42 259 6 0 0 1 dB - -;
 #X floatatom 104 259 6 0 0 1 dB - -;
-#X text 108 68 <list> of rms \, peak;
 #X obj 259 197 s foo7_rcv;
 #X obj 259 168 pack 0 0;
 #X floatatom 277 113 7 -110 20 1 dB - -;
@@ -349,27 +333,41 @@ its appearance.;
 #X connect 8 0 2 1;
 #X connect 9 0 3 0;
 #X restore 42 68 pd source;
-#X text 340 95 [vu] has settable send;
-#X text 11 23 gui-vu-meter-display;
 #X text 98 493 12;
-#X text 168 295 - rms level.;
-#X text 168 396 - peak-level.;
-#X text 168 412 - a list will be truncated to the first element.;
-#X text 168 444 - rms level.;
-#X text 168 466 - peak-level.;
 #X text 98 328 bang;
-#X text 168 328 - a bang will output the current values of the inlets.
-;
 #X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide
 ;
-#X connect 30 0 37 0;
-#X connect 31 0 42 0;
-#X connect 32 0 33 0;
-#X connect 32 1 34 0;
-#X connect 37 0 36 0;
-#X connect 38 0 39 0;
-#X connect 39 0 37 0;
-#X connect 39 1 37 1;
-#X connect 40 0 32 0;
-#X connect 41 0 32 1;
-#X connect 42 0 32 0;
+#X text 170 239 方向キーの上、下、左、右を使ってguiオブジェクトを動かします。
+\; 右クリック-[プロパティ]で表示設定ができます。
+;
+#X text 345 75 [vu]はsendとreceiveの名前を \; 設定できます。
+\; 右クリック-[プロパティ]を選択します。 \; またはメッセージで変更できます。
+\; （下のサブパッチを参照）;
+#X text 168 295 - RMSレベル;
+#X text 168 412 - リストは第１要素のみ入力に使用され、それより後は切り捨てられる。
+;
+#X text 168 396 - ピークレベル;
+#X text 97 345 [vu]のguiプロパティをメッセージで変更することについては、以下のサブパッチを参照。
+;
+#X text 168 328 - bangシグナルが入力されると現在の入力値を出力する。
+;
+#X text 168 312 - 2要素のリストが2個のインレットに入力される。
+;
+#X text 168 444 - RMSレベル;
+#X text 168 466 - ピークレベル;
+#X text 168 493 - [vu]を引数なしで作ると、すべてのguiプロパティは初期設定値になります。
+\; 改造したプロパティへ動的に変更する方法については、以下のサブパッチを参照。
+;
+#X text 11 23 GUI-VU-メーターディスプレイ;
+#X text 108 68 RMS、ピークのリスト;
+#X connect 21 0 27 0;
+#X connect 22 0 32 0;
+#X connect 23 0 24 0;
+#X connect 23 1 25 0;
+#X connect 27 0 26 0;
+#X connect 28 0 29 0;
+#X connect 29 0 27 0;
+#X connect 29 1 27 1;
+#X connect 30 0 23 0;
+#X connect 31 0 23 1;
+#X connect 32 0 23 0;

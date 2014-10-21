@@ -1,4 +1,4 @@
-#N canvas 0 0 555 619 10;
+#N canvas 0 22 555 619 10;
 #X obj 0 595 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
 14 -228856 -66577 0;
 #X obj 0 0 cnv 15 552 40 empty \$0-pddp.cnv.header writesf~ 3 12 0
@@ -49,44 +49,51 @@ pdpedia: writesf~;
 #X msg 67 65 open /tmp/foo.wav;
 #X obj 81 201 osc~ 440;
 #X msg 67 111 open -bytes 4 /tmp/foo.wav;
-#X text 176 64 create a new 16-bit soundfile;
-#X text 233 88 create 24-bit soundfile;
-#X text 232 111 create 32-bit floating-point soundfile;
 #X msg 67 88 open -bytes 3 /tmp/foo.wav;
-#X text 11 23 write audio signals to a soundfile;
 #X text 98 275 signal;
 #X text 98 292 open;
 #X text 98 415 start;
 #X text 98 430 stop;
 #X text 98 445 print;
 #X text 98 464 signal;
-#X text 167 464 - an additional inlet is created for each channel specified
-by the creation argument.;
 #X text 202 328 -wave \, -nextstep \, -aiff;
-#X text 203 343 -big \, -little (nextstep only!);
 #X text 203 358 -bytes <2 \, 3 \, or 4>;
 #X text 203 374 -rate <sample rate>;
-#X text 167 389 (setting sample rate will affect the soundfile header
-but the file will _not_ be resampled.);
-#X text 168 292 - the "open" message creates a new soundfile that can
-be written to. The "open" message may take flag-style arguments as
-follows:;
-#X text 168 415 - start streaming audio to disk.;
-#X text 168 430 - stop streaming audio to disk.;
-#X text 149 206 The soundfile is 2- or 3-byte fixed point ("pcm") or
-4-byte floating-point. The soundfile format is determined by the file
-extent ("foo.wav" \, "foo.aiff" \, or "foo.snd").;
-#X text 149 138 [writesf~] creates a subthread whose task is to write
-audio streams to disk. You need not provide any disk access time between
-"open" and "start" \, but between "stop" and the next "open" you must
-give the object time to flush all the output to disk.;
-#X text 168 445 - print debugging information.;
-#X text 168 275 - the incoming signal is written to the file.;
-#X text 168 544 - the creation argument is the number of channels (1
-to 64).;
 #X text 80 544 1) float;
-#X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide;
+#X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide
+;
 #X obj 455 51 pddp/dsp;
+#X text 11 23 オーディオシグナルをサウンドファイルに保存する
+;
+#X text 176 64 新規の16bitのサウンドファイルを作ります。
+;
+#X text 233 88 24bitのサウンドファイルを作ります。;
+#X text 232 111 32bitの浮動小数点のサウンドファイルを作ります。
+;
+#X text 150 208 サウンドファイルは2か3バイトの不動点（"pcm"）または4バイトの浮動小数点の
+\; データです。サウンドファイルのフォーマットは拡張子で決まります。
+（"foo.wav" \, "foo.aiff" \, または "foo.snd"）;
+#X text 149 138 [writesf~]はディスクにオーディオストリームを書き込むサブスレッドを作ります。
+\; サウンドファイルを開く"open"と再生する"start"の間にディスクにアクセスする
+\; ための時間を設ける必要はありませんが、"stop"の後にサウンドファイルの"open"が
+\; 来る場合、その間にはすべてのオーディオストリームをディスクに出力しつくすための
+\; 時間が必要です。;
+#X text 203 343 -big \, -little(nextstepのみ!);
+#X text 168 292 - "open"メッセージは記録先の新しいサウンドファイルを作る。
+\; "open"メッセージは以下のようなフラグ型引数を設定できる。:
+;
+#X text 168 275 - ファイルに記録される入力シグナル
+;
+#X text 167 389 (サンプリング周波数の設定はサウンドファイルのヘッダを変更しますが、
+\; ファイル自体はリサンプリングされません);
+#X text 168 445 - デバッグ情報を表示する。;
+#X text 168 430 - ディスクへのオーディオストリーミングを停止する
+;
+#X text 168 415 - ディスクへのオーディオストリーミングを開始する。
+;
+#X text 167 464 - チャンネル作成引数の設定により、チャンネル毎に追加のインレットが作られる。
+;
+#X text 168 544 - チャンネル作成の引数(1から64まで);
 #X connect 13 0 18 0;
 #X connect 14 0 15 0;
 #X connect 14 0 17 0;
@@ -96,4 +103,4 @@ to 64).;
 #X connect 19 0 18 0;
 #X connect 20 0 18 0;
 #X connect 21 0 18 0;
-#X connect 25 0 18 0;
+#X connect 22 0 18 0;
