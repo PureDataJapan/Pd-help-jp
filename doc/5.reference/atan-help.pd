@@ -1,4 +1,4 @@
-#N canvas 0 0 555 619 10;
+#N canvas 0 22 555 619 10;
 #X obj 0 595 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
 14 -228856 -66577 0;
 #X obj 0 0 cnv 15 552 40 empty \$0-pddp.cnv.header atan 3 12 0 18 -204280
@@ -58,11 +58,19 @@ pdpedia: atan;
 #X floatatom 247 209 0 0 0 0 - - -;
 #X floatatom 247 164 0 0 0 0 - - -;
 #X obj 247 186 atan;
-#X text 96 122 The [atan] object produces the arctangent of a number
-as a numeric value between -Pi/2 and Pi/2.;
-#X text 11 23 arctangent function;
-#X text 168 464 - a list will be truncated \, and the first element
-will be used as input.;
-#X obj 3 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide;
+#X obj 3 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide
+;
+#X text 168 464 - リストは第１要素のみ入力に使用され、それより後は切り捨てられる。
+;
+#X obj 354 257 tan;
+#X floatatom 248 295 0 0 0 0 - - -;
+#X floatatom 248 250 0 0 0 0 - - -;
+#X obj 248 272 tan;
+#X text 96 122 [atan]オブジェクトは、ある数値から-Pi/2とPi/2の範囲のアークタンジェント（角度）
+\; を計算する。;
+#X text 11 23 アークタンジェント関数;
+#X connect 16 0 23 0;
 #X connect 17 0 18 0;
 #X connect 18 0 16 0;
+#X connect 23 0 24 0;
+#X connect 24 0 22 0;

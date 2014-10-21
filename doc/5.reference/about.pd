@@ -1,12 +1,21 @@
+#N struct 1007-line float a float b;
+#N struct 1007-sparks float x float y array a 1007-spark;
+#N struct 1007-spark float x float y float coefx float coefy float
+active float c;
 #N struct 1026-line float a float b;
 #N struct 1026-sparks float x float y array a 1026-spark;
 #N struct 1026-spark float x float y float coefx float coefy float
 active float c;
 #N struct 1026-logo;
+#N struct 1007-logo;
 #N canvas 60 57 700 538 10;
 #X obj 16 439 bng 15 150 50 0 \$0-credits-bng \$0-credits-bng empty
 20 7 0 12 -262144 -66577 -262144;
 #N canvas 0 22 450 300 \$0-gop 0;
+#X scalar 1007-line 1 319 \;;
+#X scalar 1007-sparks 10 0 \; 0 0 0 0 0 0 \; 0 0 0 0 0 0 \; 0 0 0 0
+0 0 \; 0 0 0 0 0 0 \; 0 0 0 0 0 0 \; 0 0 0 0 0 0 \; 0 0 0 0 0 0 \;
+0 0 0 0 0 0 \; 0 0 0 0 0 0 \; 0 0 0 0 0 0 \; \;;
 #X scalar 1026-line 1 319 \;;
 #X scalar 1026-sparks 10 0 \; 0 0 0 0 0 0 \; 0 0 0 0 0 0 \; 0 0 0 0
 0 0 \; 0 0 0 0 0 0 \; 0 0 0 0 0 0 \; 0 0 0 0 0 0 \; 0 0 0 0 0 0 \;
@@ -72,6 +81,7 @@ float active float c;
 #X obj 205 213 s pd-\$0-logo-gop;
 #N canvas 284 86 198 93 \$0-logo-gop 0;
 #X scalar 1026-logo \;;
+#X scalar 1007-logo \;;
 #X coords 0 0 112 72 112 72 2 0 0;
 #X restore 10 10 pd \$0-logo-gop;
 #X obj 15 348 outlet;
@@ -442,16 +452,13 @@ Ricardo_Palmieri Mathias_Bredholt Antoine_Villeret;
 #X coords 0 -1 1 1 112 72 2 10 10;
 #X restore 10 46 pd;
 #X text 9 31 |;
-#X msg 115 130 0.43.4-extended;
+#X msg 115 130 0.44.0-extended-20130203;
 #X text 36 376 mailing lists:;
 #X text 36 389 web forums:;
 #X obj 122 389 pddp/pddplink http://puredata.info/community/forums
 ;
 #X text 36 402 IRC chatroom:;
 #X obj 122 402 pddp/pddplink irc://irc.freenode.net/dataflow;
-#X text 131 82;
-#X text 131 65;
-#X text 131 99;
 #X text 131 48 Pdはライブ・インタラクティブ・コンピュータミュー
 \; ジックのリアルタイムグラフィカルプログラミング環境
 \; です。SGI（シリコングラフィックス）マシン、マイク
