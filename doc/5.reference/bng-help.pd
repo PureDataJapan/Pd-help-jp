@@ -1,4 +1,4 @@
-#N canvas 0 0 555 619 10;
+#N canvas 0 22 555 619 10;
 #X obj 0 595 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
 14 -228856 -66577 0;
 #X obj 0 0 cnv 15 552 40 empty \$0-pddp.cnv.header bng 3 12 0 18 -204280
@@ -80,8 +80,6 @@ pdpedia: bng;
 #X obj 292 126 bng 15 250 50 0 empty empty empty 8 -8 0 10 -262144
 -1 -1;
 #X msg 75 49 0;
-#X text 321 142 and receive names. Right-;
-#X text 321 157 click and choose;
 #N canvas 85 201 428 309 bng_creation_arguments 0;
 #X text 12 28 "bng" can be called with 14 creation arguments. These
 are not "optional" - all parameters must be filled or the gui-bng will
@@ -99,14 +97,7 @@ lblColor;
 0 12 9 2 18;
 #X connect 6 0 3 0;
 #X restore 100 519 pd bng_creation_arguments;
-#X text 320 173 "Properties" to set them \,;
-#X text 320 126 [bng] has settable send;
-#X text 110 250 Use the UP- \, DOWN- \, LEFT- or RIGHT-key to move
-a selected gui-object. Right-click and choose "Properties" to modify
-its appearance.;
-#X text 321 187 or change them with messages;
-#X text 321 201 (see the subpatch below);
-#N canvas 48 5 428 610 Changing_GUI_Properties 0;
+#N canvas 48 22 428 610 Changing_GUI_Properties 1;
 #X text 239 33 no init;
 #X text 270 159 label position;
 #X text 167 451 delta;
@@ -191,7 +182,7 @@ its appearance.;
 #X connect 6 0 3 0;
 #X coords 0 -1 1 1 48 62 2 100 100;
 #X restore 171 316 pd flash-time;
-#N canvas 0 0 306 317 flash-time 0;
+#N canvas 0 22 306 317 flash-time 0;
 #X obj 96 521 outlet;
 #X obj 162 230 t b f;
 #X obj 96 268 +;
@@ -425,11 +416,20 @@ Czaja to build comprehensive documentation for Pd.;
 #X text 257 564 IEM KUG;
 #X text 232 576 graz \, austria 2002;
 #X text 168 418 - [bng] only outputs a bang message.;
-#X text 168 308 - [bng] outputs a bang message in response to any message
-that has not been defined to affect gui-properties (see below).;
-#X text 98 346 See the following subpatch for messages that change
-the gui-properties of [bng]:;
-#X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide;
+#X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide
+;
+#X text 320 126 [bng]はsendとreceiveの名前を設定できる。
+\; それらは右クリック-[プロパティ]を選択して \;
+設定をするか、外部からメッセージを送って \; 変更できる。(下のサブパッチを参照)
+;
+#X text 110 250 方向キーの上、下、左、右を使って選択したguiオブジェクトを動かすことができる。
+\; 右クリック-[プロパティ]を選択すると表示設定の変更ができる。
+;
+#X text 168 308 - [bng]はメッセージが入力される度にbangシグナルを出力する。
+\; ただし、メッセージはguiのプロパティに影響を与えないものに限る。
+\; (以下を参照);
+#X text 98 346 [bng]のguiのプロパティを変更するメッセージについては以下のサブパッチを参照のこと:
+;
 #X connect 15 0 14 0;
 #X connect 17 0 18 0;
 #X connect 18 0 16 0;

@@ -1,6 +1,6 @@
 #N struct ds-array-ex float x float y array circles circle;
 #N struct circle float y symbol a;
-#N canvas 0 0 448 312 10;
+#N canvas 0 22 448 312 10;
 #N canvas 12 67 428 377 Common_uses_for_arrays_in_PD 0;
 #X text 20 37 Arrays are versatile. Their simple structure make them
 useful in countless situations. This page discusses perhaps the most
@@ -28,9 +28,6 @@ functions.;
 cut-n-paste \, pitch-shift \, time expansion \, down/upsampling \,
 and other tools typically found in commercial wave editors.;
 #X restore 43 135 pd Common_uses_for_arrays_in_PD;
-#X text 40 180 This document is meant to supplement the help documentation
-for [table] \, [tabread] \, [tabwrite] \, [soundfiler] \, [tabsend~]
-\, [tabreceive~] \, [tabplay~] \, etc.;
 #X obj 1 1 cnv 15 445 20 empty \$0-pddp.cnv.header arrays 20 10 1 18
 -261106 -33289 0;
 #X obj 407 2 pddp/pddplink http://puredata.info/dev/pddp -text pddp
@@ -80,8 +77,8 @@ inside a subpatch).;
 #X text 19 228 3) (less commonly) an array defined (and possibly represented
 graphically) as part of a data structure.;
 #X restore 43 42 pd What_is_an_array_in_PD;
-#N canvas 0 0 428 403 The_Put_menu_array 0;
-#N canvas 0 0 450 300 (subpatch) 0;
+#N canvas 0 22 428 403 The_Put_menu_array 0;
+#N canvas 0 22 450 300 (subpatch) 0;
 #X array \$0-pddp-garray-ex1 100 float 2;
 #X coords 0 1 99 -1 200 140 1;
 #X restore 22 73 graph;
@@ -134,7 +131,7 @@ can be anything greater than 0 (zero). At a sample rate of 441000 khz
 ;
 #X restore 22 366 pd How_to_create_a_Put_menu_array;
 #X restore 63 64 pd The_Put_menu_array;
-#N canvas 0 0 428 388 The_[table]_object 0;
+#N canvas 0 22 428 388 The_[table]_object 0;
 #X obj 1 1 cnv 15 425 20 empty \$0-pddp.cnv.subheading empty 20 10
 1 18 -261106 -33289 0;
 #X text 7 1 The [table] object;
@@ -162,7 +159,7 @@ than "Put" menu arrays.;
 #X restore 63 86 pd The_[table]_object;
 #X obj 201 87 pddp/pddplink table-help.pd;
 #X obj 201 65 pddp/pddplink array-help.pd;
-#N canvas 0 0 428 410 Data_structure_arrays 0;
+#N canvas 0 22 428 410 Data_structure_arrays 0;
 #X scalar ds-array-ex 26 195 \; 5 Jan \; 3 Feb \; 6 Mar \; 13 Apr \;
 23 May \; 36 Jun \; 52 Jul \; 68 Aug \; 74 Sep \; 75 Oct \; 76 Nov
 \; 76 Dec \; \;;
@@ -233,7 +230,7 @@ of the array.;
 #X connect 3 0 5 0;
 #X connect 5 0 4 0;
 #X restore 23 206 pd Setting_the_size_of_an_array;
-#N canvas 4 16 720 375 Concatenate_two_arrays 0;
+#N canvas 4 22 720 375 Concatenate_two_arrays 0;
 #X text 19 10 This example assumes that we already know the size of
 the two arrays which will be concatenated. This process will fill NewArray
 with the contents of exampleArray and concatArray.;
@@ -361,7 +358,7 @@ terminal window \, or it can be saved to a text file.;
 #X connect 30 1 28 0;
 #X connect 30 1 26 0;
 #X restore 23 338 pd Join_array_elements_into_a_list;
-#N canvas 1 2 418 389 Getting_the_size_of_an_array 0;
+#N canvas 1 22 418 389 Getting_the_size_of_an_array 0;
 #X obj 18 69 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
 -1;
 #X floatatom 18 114 5 0 0 0 - - -;
@@ -381,7 +378,7 @@ to dynamically change the array name:;
 #X msg 36 194 symbol someOtherArray;
 #X text 15 300 Arrays accept a "print" command which will output important
 array information to the terminal window. Like below:;
-#N canvas 0 0 450 300 (subpatch) 0;
+#N canvas 0 22 450 300 (subpatch) 0;
 #X array someOtherArray 4 float 2;
 #X coords 0 1 4 -1 75 50 1;
 #X restore 235 201 graph;
@@ -524,7 +521,7 @@ is pushed \, an element is added to the array and the new size is returned.
 #X connect 12 0 14 0;
 #X connect 17 0 19 0;
 #X restore 23 360 pd Popping_and_Pushing_arrays;
-#N canvas 5 2 669 391 Shifting_an_array 0;
+#N canvas 5 22 669 391 Shifting_an_array 0;
 #X obj 30 90 bng 15 250 50 0 empty empty Shift_me 18 7 0 8 -24198 -1
 -1;
 #X text 16 12 SHIFTING AN ARRAY;
@@ -692,7 +689,7 @@ by more drastic tools like compressors \, limiters \, gain multipliers
 \, etc.;
 #X connect 4 0 3 0;
 #X restore 23 426 pd Higher_math_using_arrays;
-#N canvas 4 16 727 320 Files_and_arrays 0;
+#N canvas 4 22 727 320 Files_and_arrays 0;
 #X text 24 14 OTHER IMPORTANT STUFF;
 #X obj 225 91 savepanel;
 #X obj 225 70 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
@@ -754,7 +751,7 @@ tick).;
 #X text 17 285 Arrays can be given labels to describe the x and y axis.
 Give a y value and a bunch of x values or vice versa:;
 #X restore 23 470 pd Additional_tools;
-#N canvas 2 2 433 386 Populating_an_array 0;
+#N canvas 2 22 433 386 Populating_an_array 0;
 #X text 19 21 An array in Pd is primarily a storage device for numbers.
 The result is a series of numbers that you can do with whatever you
 wish...but how does one populate an array?;
@@ -827,8 +824,11 @@ just set a constant value of 0;
 #X connect 11 0 12 0;
 #X restore 23 272 pd Clearing_an_array;
 #X restore 43 157 pd How_to_manipulate_arrays_in_PD;
-#X text 40 226 For more discussion about arrays and tables \, please
-see:;
 #X obj 40 241 pddp/pddplink ../2.control.examples/15.array.pd;
 #X obj 40 256 pddp/pddplink ../2.control.examples/16.more.arrays.pd
+;
+#X text 40 180 このドキュメントは[table]、[tabread] \, [tabwrite]
+\, [soundfiler] \, \; [tabsend~] \, [tabreceive~] \, [tabplay~]、その他のヘルプドキュメントを
+\; 補うためのものである。;
+#X text 40 226 Arrayとテーブルのさらなる議論については、以下を参照のこと：
 ;
