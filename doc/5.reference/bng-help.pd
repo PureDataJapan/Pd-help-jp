@@ -230,7 +230,7 @@ pdpedia: bng;
 0;
 #X obj 311 467 cnv 15 100 100 empty empty empty 20 12 0 14 -261682
 -66577 0;
-#X obj 389 552 bng 15 250 50 1 bng-snd bng_rcv myBang 17 7 0 10 -262144
+#X obj 340 500 bng 15 250 50 1 bng-snd bng_rcv myBang 17 7 0 10 -262144
 -33289 -33289;
 #X obj 13 53 nbx 3 14 8 200 0 0 empty \$0-dim empty 0 -8 0 12 -262144
 -1 -1 15 256;
@@ -269,9 +269,9 @@ pdpedia: bng;
 #X obj 103 149 t b a;
 #X obj 68 205 outlet;
 #X obj 103 104 nbx 3 14 -1e+37 1e+37 0 0 \$0-dummy \$0-xpos empty 0
--8 0 12 -262144 -1 -1 349 256;
+-8 0 12 -262144 -1 -1 340 256;
 #X obj 103 124 nbx 3 14 -1e+37 1e+37 0 0 \$0-dummy \$0-ypos empty 0
--8 0 12 -262144 -1 -1 520 256;
+-8 0 12 -262144 -1 -1 500 256;
 #X connect 0 0 2 0;
 #X connect 1 0 0 0;
 #X connect 1 1 0 1;
@@ -284,9 +284,9 @@ pdpedia: bng;
 #X obj 103 149 t b a;
 #X obj 68 205 outlet;
 #X obj 103 104 nbx 3 14 -20 20 0 0 \$0-dummy \$0-xdelta empty 0 -8
-0 12 -262144 -1 -1 20 256;
+0 12 -262144 -1 -1 0 256;
 #X obj 103 124 nbx 3 14 -20 20 0 0 \$0-dummy \$0-ydelta empty 0 -8
-0 12 -262144 -1 -1 20 256;
+0 12 -262144 -1 -1 0 256;
 #X connect 0 0 2 0;
 #X connect 1 0 0 0;
 #X connect 1 1 0 1;
