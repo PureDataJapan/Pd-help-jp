@@ -1,4 +1,4 @@
-#N canvas 257 92 555 619 10;
+#N canvas -7 91 555 619 10;
 #X obj 0 595 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
 14 -228856 -66577 0;
 #X obj 0 0 cnv 15 552 40 empty \$0-pddp.cnv.header cputime 3 12 0 18
@@ -62,11 +62,6 @@ pdpedia: cputime;
 #X obj 78 374 cnv 17 3 17 empty \$0-pddp.cnv.let.1 1 5 9 0 16 -228856
 -162280 0;
 #X text 98 373 bang;
-#X text 168 416 - the elapsed time in milliseconds arrives at the outlet
-when the right inlet receives a bang.;
-#X text 80 264 NOTE: Unlike most other objects in Pd \, the right inlet
-of [cputime] is the hot one (i.e. \, a bang to it triggers the output).
-;
 #N canvas 70 46 428 538 Time_Measurements 0;
 #X obj 30 395 time_measurements;
 #X obj 30 291 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
@@ -146,24 +141,29 @@ operating system's internal clock.;
 #X obj 78 416 cnv 17 3 17 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
 -162280 0;
 #X text 98 341 bang;
-#X text 168 341 - an initial bang to the left inlet starts the timer.
-Subsequent bangs reset the timer.;
-#X text 168 373 - a bang to the right inlet causes the elapsed time
-to be output (in milliseconds).;
 #X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide
 ;
 #X text 101 531 For a patch that uses [cputime] see:;
 #X obj 98 551 pddp/pddplink ../7.stuff/tools/load-meter.pd;
 #X text 101 571 (also accessible from the "Media" menu);
 #X text 11 23 CPU時間を計る;
-#X text 78 57 「cputime」オブジェクトは経過したCPU時間を計ります。
-CPU時間は、簡単に言うならば \; １つの仕事をあなたのコンピュータがこなすのに必要とする時間です。
-;
 #X text 118 134 クリックしてスタートまたはリセット
 ;
 #X text 155 202 出力はミリ秒;
+#X text 78 57 「cputime」オブジェクトは経過したCPU時間を計る。
+簡単に言うならばCPU時間とは \; １つの仕事をあなたのコンピュータがこなすのに必要とする時間のことである。
+;
 #X text 160 157 クリックすると経過CPU時間を出力する。
-\; 定期的に計測する場合はクリックを繰り返す。
+\; 周期的に計測する場合はクリックを繰り返す。
+;
+#X text 80 264 NOTE:他の多くのPdオブジェクトと違い、[cputime]の右インレットはHotであり、
+\; bangシグナルが入力されると出力がある。;
+#X text 168 341 - 左インレットへ最初に入力される最初のbangシグナルはタイマーを開始する。
+\; その後のbangシグナルはタイマーをリセットする。
+;
+#X text 168 373 - 右インレットへ入力されるbangシグナルは経過時間をミリ秒単位で出力する。
+;
+#X text 168 416 - 右インレットへbangシグナルが入力されると、経過時間をミリ秒単位で出力する。
 ;
 #X connect 13 0 16 1;
 #X connect 14 0 16 0;

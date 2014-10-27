@@ -80,30 +80,26 @@ pdpedia: bng;
 #X obj 292 126 bng 15 250 50 0 empty empty empty 8 -8 0 10 -262144
 -1 -1;
 #X msg 75 49 0;
-#N canvas 85 201 428 309 bng_creation_arguments 0;
-#X text 12 28 "bng" can be called with 14 creation arguments. These
-are not "optional" - all parameters must be filled or the gui-bng will
-not instantiate correctly.;
-#X text 12 132 For example \, click the msg-box to dynamically create
-a bng:;
-#X text 12 80 bng creation arguments: Size Hold Interrupt Init sendName
-receiveName Label labelXOff labelYOff Font# fontSize bgColor foregroundColor
-lblColor;
+#N canvas 32 188 428 309 bng_creation_arguments 0;
 #X obj 13 196 s pd-bng_creation_arguments;
 #X obj 1 1 cnv 15 425 20 empty \$0-pddp.cnv.subheading empty 3 12 0
 14 -204280 -1 0;
 #X text 7 2 [bng] Creation Arguments and Dynamic Patching;
 #X msg 13 154 obj 180 240 bng 30 500 50 0 send receive Atlas -2 40
 0 12 9 2 18;
-#X connect 6 0 3 0;
+#X obj 180 240 bng 30 500 50 0 send receive Atlas -2 40 0 12 -257472
+-66577 -62784;
+#X text 12 28 "bng"は14個の作成用の引数を使って作成できる。これら14個の引数はすべて
+\; 設定される必要があり、どれかが欠けると[bng]のguiは正しく作成されない。
+;
+#X text 12 132 例えば、以下のメッセージボックスをクリックすると、動的に[bng]が作成される:
+;
+#X text 12 80 bngの作成用引数:表示サイズ　点灯時間　点滅間隔　初期値　Sendシンボル　
+\; Receiveシンボル ラベル　X値オフセット Y値オフセット　フォント　フォントサイズ
+\; 　背景色　前景色　ラベル色;
+#X connect 3 0 0 0;
 #X restore 100 519 pd bng_creation_arguments;
-#N canvas 48 22 428 610 Changing_GUI_Properties 1;
-#X text 239 33 no init;
-#X text 270 159 label position;
-#X text 167 451 delta;
-#X text 11 294 font properties;
-#X text 151 159 label;
-#X text 15 451 position;
+#N canvas 48 22 428 610 Changing_GUI_Properties 0;
 #X msg 13 103 size \$1;
 #X msg 104 104 flashtime \$1 \$2;
 #X msg 239 54 init 0;
@@ -114,8 +110,6 @@ lblColor;
 #X msg 13 366 label_font \$1 \$2;
 #X msg 16 558 pos \$1 \$2;
 #X msg 168 558 delta \$1 \$2;
-#X text 171 294 preset-colors;
-#X text 297 294 RGB-colors;
 #X msg 171 401 color \$1 \$2 \$3;
 #X msg 329 104 send bng-snd;
 #X obj 13 127 s bng_rcv;
@@ -142,8 +136,6 @@ lblColor;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X restore 320 583 pd init;
-#X text 320 33 change send name;
-#X text 13 159 change receive name;
 #N canvas 366 206 174 259 flash-time 0;
 #X obj 68 180 pack;
 #X obj 103 149 t b a;
@@ -159,8 +151,6 @@ lblColor;
 #X connect 4 0 1 0;
 #X coords 0 -1 1 1 48 42 2 100 100;
 #X restore 104 54 pd flash-time;
-#X text 101 33 flash-time;
-#X text 12 32 dimensions;
 #N canvas 364 205 306 317 flash-time 0;
 #X obj 69 196 t b a;
 #X obj 33 262 outlet;
@@ -233,8 +223,6 @@ lblColor;
 #X connect 20 0 7 0;
 #X coords 0 -1 1 1 102 74 2 100 100;
 #X restore 298 316 pd flash-time;
-#X text 248 72 init on;
-#X text 248 85 loadbang;
 #X obj 168 534 list;
 #X obj 168 473 bng 20 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -242,20 +230,10 @@ lblColor;
 0;
 #X obj 311 467 cnv 15 100 100 empty empty empty 20 12 0 14 -261682
 -66577 0;
-#X obj 340 500 bng 15 250 50 1 bng-snd bng_rcv myBang 17 7 0 10 -262144
+#X obj 389 552 bng 15 250 50 1 bng-snd bng_rcv myBang 17 7 0 10 -262144
 -33289 -33289;
-#X text 62 318 1.font(0-2);
-#X text 62 339 2.height;
-#X text 220 318 1.bg;
-#X text 220 338 2.front;
-#X text 220 359 3.label;
-#X text 64 472 1.x-position;
-#X text 64 494 2.y-position;
-#X text 247 472 1.x-delta;
-#X text 247 494 2.y-delta;
 #X obj 13 53 nbx 3 14 8 200 0 0 empty \$0-dim empty 0 -8 0 12 -262144
 -1 -1 15 256;
-#X text 58 51 size;
 #N canvas 366 206 174 259 flash-time 0;
 #X obj 68 180 pack;
 #X obj 103 149 t b a;
@@ -291,9 +269,9 @@ lblColor;
 #X obj 103 149 t b a;
 #X obj 68 205 outlet;
 #X obj 103 104 nbx 3 14 -1e+37 1e+37 0 0 \$0-dummy \$0-xpos empty 0
--8 0 12 -262144 -1 -1 340 256;
+-8 0 12 -262144 -1 -1 349 256;
 #X obj 103 124 nbx 3 14 -1e+37 1e+37 0 0 \$0-dummy \$0-ypos empty 0
--8 0 12 -262144 -1 -1 500 256;
+-8 0 12 -262144 -1 -1 520 256;
 #X connect 0 0 2 0;
 #X connect 1 0 0 0;
 #X connect 1 1 0 1;
@@ -306,9 +284,9 @@ lblColor;
 #X obj 103 149 t b a;
 #X obj 68 205 outlet;
 #X obj 103 104 nbx 3 14 -20 20 0 0 \$0-dummy \$0-xdelta empty 0 -8
-0 12 -262144 -1 -1 0 256;
+0 12 -262144 -1 -1 20 256;
 #X obj 103 124 nbx 3 14 -20 20 0 0 \$0-dummy \$0-ydelta empty 0 -8
-0 12 -262144 -1 -1 0 256;
+0 12 -262144 -1 -1 20 256;
 #X connect 0 0 2 0;
 #X connect 1 0 0 0;
 #X connect 1 1 0 1;
@@ -316,42 +294,63 @@ lblColor;
 #X connect 4 0 1 0;
 #X coords 0 -1 1 1 48 42 2 100 100;
 #X restore 197 473 pd flash-time;
-#X text 321 203 2.y-offset;
-#X text 321 182 1.x-offset;
-#X text 153 56 1.interrupt;
-#X text 153 76 2.hold;
 #X obj 1 1 cnv 15 425 20 empty \$0-pddp.cnv.subheading empty 3 12 0
 14 -204280 -1 0;
-#X text 6 2 [bng] Changing Properties through Messages;
-#X connect 6 0 20 0;
-#X connect 7 0 21 0;
-#X connect 8 0 22 0;
+#X text 6 2 [bng] メッセージを使ってプロパティを変更する
+;
+#X text 12 32 大きさ;
+#X text 101 33 点滅時間;
+#X text 153 56 1 点滅間隔;
+#X text 153 76 2 点灯時間;
+#X text 58 51 サイズ;
+#X text 246 72 loadbangで \; 初期値あり;
+#X text 239 33 初期値なし;
+#X text 320 33 Sendシンボル変更;
+#X text 13 159 Receiveシンボル変更;
+#X text 151 159 ラベル;
+#X text 270 159 ラベルの位置;
+#X text 321 182 1 Xオフセット;
+#X text 321 203 2 Yオフセット;
+#X text 11 294 フォントプロパティ;
+#X text 62 318 1 フォント(0-2);
+#X text 62 339 2 サイズ;
+#X text 171 294 プリセット色;
+#X text 220 318 1.背景色;
+#X text 220 338 2.前景色;
+#X text 220 359 3.ラベル色;
+#X text 297 294 色の作成(RGB);
+#X text 15 451 位置;
+#X text 64 472 1.Xの位置;
+#X text 64 494 2.Yの位置;
+#X text 247 494 2.Yの相対位置;
+#X text 247 472 1.Xの相対位置;
+#X text 167 451 相対位置(delta);
+#X connect 0 0 12 0;
+#X connect 1 0 13 0;
+#X connect 2 0 14 0;
+#X connect 3 0 14 0;
+#X connect 4 0 15 0;
+#X connect 5 0 18 0;
+#X connect 6 0 19 0;
+#X connect 7 0 20 0;
+#X connect 8 0 23 0;
 #X connect 9 0 22 0;
-#X connect 10 0 23 0;
-#X connect 11 0 26 0;
-#X connect 12 0 27 0;
-#X connect 13 0 28 0;
-#X connect 14 0 31 0;
-#X connect 15 0 30 0;
-#X connect 18 0 29 0;
-#X connect 19 0 23 0;
-#X connect 32 0 25 0;
-#X connect 33 0 24 0;
-#X connect 34 0 26 0;
+#X connect 10 0 21 0;
+#X connect 11 0 15 0;
+#X connect 24 0 17 0;
+#X connect 25 0 16 0;
+#X connect 26 0 18 0;
+#X connect 28 0 1 0;
+#X connect 29 0 10 0;
+#X connect 30 0 10 0;
+#X connect 31 0 9 0;
+#X connect 32 0 31 0;
+#X connect 36 0 0 0;
+#X connect 37 0 6 0;
 #X connect 38 0 7 0;
-#X connect 41 0 18 0;
-#X connect 42 0 18 0;
-#X connect 45 0 15 0;
-#X connect 46 0 45 0;
-#X connect 59 0 6 0;
-#X connect 61 0 12 0;
-#X connect 62 0 13 0;
-#X connect 63 0 14 0;
-#X connect 64 0 45 1;
+#X connect 39 0 8 0;
+#X connect 40 0 31 1;
 #X restore 101 380 pd Changing_GUI_Properties;
-#X text 168 463 - creating a [bng] without any arguments will set default
-values for all gui-properties. See the subpatch below to learn how
-to dynamically instantiate a [bng] object with custom properties:;
 #X text 11 23 gui-bang;
 #N canvas 43 24 428 573 bng_properties 0;
 #X text 22 53 1 Size;
@@ -415,7 +414,6 @@ Czaja to build comprehensive documentation for Pd.;
 #X text 215 551 (c) musil@iem.kug.ac.at;
 #X text 257 564 IEM KUG;
 #X text 232 576 graz \, austria 2002;
-#X text 168 418 - [bng] only outputs a bang message.;
 #X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide
 ;
 #X text 320 126 [bng]はsendとreceiveの名前を設定できる。
@@ -428,8 +426,13 @@ Czaja to build comprehensive documentation for Pd.;
 #X text 168 308 - [bng]はメッセージが入力される度にbangシグナルを出力する。
 \; ただし、メッセージはguiのプロパティに影響を与えないものに限る。
 \; (以下を参照);
-#X text 98 346 [bng]のguiのプロパティを変更するメッセージについては以下のサブパッチを参照のこと:
+#X text 98 351 [bng]のguiのプロパティを変更するメッセージについては、以下のサブパッチを参照:
 ;
+#X text 168 418 - [bng]はbangシグナルのみを出力する。
+;
+#X text 168 463 - [bng]を引数なしで作成すると、すべてのguiプロパティを初期設定値になる。
+\; 独自に設定されたプロパティの[bng]オブジェクトを動的に作成する方法は、
+\; 以下のサブパッチを参照。;
 #X connect 15 0 14 0;
 #X connect 17 0 18 0;
 #X connect 18 0 16 0;
