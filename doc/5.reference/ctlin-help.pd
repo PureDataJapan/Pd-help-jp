@@ -1,4 +1,4 @@
-#N canvas 0 0 555 619 10;
+#N canvas 0 22 571 638 10;
 #X obj 0 595 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
 14 -228856 -66577 0;
 #X obj 0 0 cnv 15 552 40 empty \$0-pddp.cnv.header ctlin 3 12 0 18
@@ -67,14 +67,6 @@ by Olaf Matthes);
 #X obj 22 415 pddp/helplink cyclone/midiflush;
 #X restore 101 597 pd Related_objects;
 #X obj 483 3 ctlin;
-#X text 109 66 [ctlin]は、MIDポートから、直接 MIDIコントロールチェンジメッセージを
-\
-読み込む。MIDIコントロールメッセージの数値とその意味するところについては
-\
-MIDIスペシフィケーションチャートを見てください。(c とか CC#が変数として書かれている
-\
-MIDI-implementation chartが、インターネットを 検索すると見つけられると思います)
-;
 #X text 98 305 (none);
 #X obj 78 338 cnv 17 3 17 empty \$0-pddp.cnv.let.1 0 5 9 0 16 -228856
 -162280 0;
@@ -93,34 +85,18 @@ MIDI-implementation chartが、インターネットを 検索すると見つけ
 #X obj 120 136 ctlin 64;
 #X floatatom 120 177 5 0 0 0 - - -;
 #X floatatom 165 161 5 0 0 0 - - -;
-#X text 187 134 すべてのチャンネルの、コントローラ番号64のみ読み込む
-;
-#X text 103 193 コントローラの値;
 #X text 172 176 チャンネル番号;
 #X obj 116 223 ctlin 64 1;
-#X text 193 224 チャンネルの1の、コントローラ番号64のみ読み込む
-;
 #X floatatom 116 249 5 0 0 0 - - -;
-#X text 113 264 コントローラの値;
 #X obj 280 570 pddp/pddplink all_about_midi_flags.pd -text all_about_midi_flags
-;
-#X text 100 570 PdでのMIDIの使い方の説明については:　　　　　　　　　　　　　　　　　　を見てください。
 ;
 #X obj 455 20 pddp/pddplink http://wiki.puredata.info/en/ctlin -text
 pdpedia: ctlin;
-#X text 11 23 MIDI コントロールチェンジの読み込み;
 #X text 168 481 - (オプション) 読み込むコントローラ番号。もしない場合は
-\
 すべてのチャンネルの、すべてのコントローラーのデータが読み込まれる。
 ;
-#X text 168 521 - (オプション) 読み込むチャンネル番号。この２つ目の引数がない場合
-\
-すべてのチャンネルから読み込まれる。
-;
 #X text 168 406 もし引数がひとつだけの場合、[ctlin]には、コントロール値と
-\
 チャンネル番号の２つのアウトレットしかできない。引数を２つ(コントローラ番号と
-\
 チャンネル番号）与えると、アウトレットは1つ(コントロール値）だけになる。
 ;
 #X text 168 337 - コントローラからの出力値;
@@ -130,9 +106,25 @@ pdpedia: ctlin;
 #X text 80 521 2) float;
 #X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide
 ;
-#X connect 17 0 18 0;
-#X connect 17 1 19 0;
-#X connect 17 2 20 0;
-#X connect 22 0 23 0;
-#X connect 22 1 24 0;
-#X connect 28 0 30 0;
+#X text 11 23 MIDIコントロールチェンジの入力;
+#X text 168 521 - (オプション) 読み込むチャンネル番号。この２つ目の引数がない場合
+\; すべてのチャンネルから読み込まれる。;
+#X text 100 570 PdでのMIDIの使い方については:　　　　　　　　　　　　　　　　　のリンクを参照。
+;
+#X text 109 66 [ctlin]は、MIDポートからMIDIコントロールチェンジメッセージを読み込む。
+\; MIDIコントロールメッセージの数値とその意味については
+MIDIスペシフィケーションチャート \; を参照。 \; (cやCC#が変数として書かれているMIDI-implementation
+chartが、 \; インターネットを検索すると見つけられる)
+;
+#X text 187 134 すべてのチャンネルのコントロール番号64の数値を読み込む
+;
+#X text 193 224 チャンネル1のコントローラ番号64の数値を読み込む
+;
+#X text 103 193 コントロールの数値;
+#X text 113 264 コントロールの数値;
+#X connect 16 0 17 0;
+#X connect 16 1 18 0;
+#X connect 16 2 19 0;
+#X connect 21 0 22 0;
+#X connect 21 1 23 0;
+#X connect 25 0 26 0;

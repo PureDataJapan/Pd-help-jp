@@ -1,4 +1,4 @@
-#N canvas -7 91 555 619 10;
+#N canvas 0 91 555 619 10;
 #X obj 0 595 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
 14 -228856 -66577 0;
 #X obj 0 0 cnv 15 552 40 empty \$0-pddp.cnv.header cputime 3 12 0 18
@@ -143,9 +143,7 @@ operating system's internal clock.;
 #X text 98 341 bang;
 #X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide
 ;
-#X text 101 531 For a patch that uses [cputime] see:;
 #X obj 98 551 pddp/pddplink ../7.stuff/tools/load-meter.pd;
-#X text 101 571 (also accessible from the "Media" menu);
 #X text 11 23 CPU時間を計る;
 #X text 118 134 クリックしてスタートまたはリセット
 ;
@@ -164,6 +162,10 @@ operating system's internal clock.;
 #X text 168 373 - 右インレットへ入力されるbangシグナルは経過時間をミリ秒単位で出力する。
 ;
 #X text 168 416 - 右インレットへbangシグナルが入力されると、経過時間をミリ秒単位で出力する。
+;
+#X text 101 531 [cputime]オブジェクトを使っているパッチについては以下を参照:
+;
+#X text 101 571 ("メディア"メニュー-[CPUロードメーター]を選択しても開く)
 ;
 #X connect 13 0 16 1;
 #X connect 14 0 16 0;
