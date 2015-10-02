@@ -28,7 +28,7 @@ Wilkes revised the patch to conform to the PDDP template for Pd version
 0 13 -228856 -1 0;
 #X obj 0 558 cnv 3 550 3 empty \$0-pddp.cnv.more_info more_info 8 12
 0 13 -228856 -1 0;
-#X text 98 535 (none);
+#X text 98 535 （なし）;
 #N canvas 73 482 428 109 Related_objects 0;
 #X obj 1 1 cnv 15 425 20 empty \$0-pddp.cnv.subheading empty 3 12 0
 14 -204280 -1 0;
@@ -41,43 +41,41 @@ Wilkes revised the patch to conform to the PDDP template for Pd version
 -162280 0;
 #X obj 78 498 cnv 17 3 17 empty \$0-pddp.cnv.let.1 1 5 9 0 16 -228856
 -162280 0;
-#X text 11 23 read and write text files;
+#X text 11 23 テキストファイルを読み書きする;
 #X obj 435 20 pddp/pddplink http://wiki.puredata.info/en/textfile -text
 pdpedia: textfile;
 #X obj 465 3 textfile;
 #X obj 85 347 print done;
 #X text 98 497 bang;
-#X text 167 497 - this outlet gets a bang when you hit the end of the
-sequence.;
+#X text 167 497 - このアウトレットはシークエンスの終わりに到達したときbangを得る。;
 #X text 98 473 list;
-#X text 168 473 - this outlet gets the lines in sequence.;
-#X text 168 437 (see the example above for messages accepted by [textfile])
-;
+#X text 168 473 - このアウトレットは行を順番に得る。;
+#X text 168 437 （上の例で[textfile]に受け取られているメッセージを参照）;
 #X msg 101 76 rewind;
-#X text 214 207 read a file;
+#X text 214 207 ファイルを読み込む;
 #X msg 101 208 read textfile.txt;
-#X text 152 75 go to beginning;
+#X text 152 75 先頭に飛ぶ;
 #X msg 101 98 bang;
-#X text 152 97 output one line as a list;
+#X text 152 97 一行をリストとして出力;
 #X msg 101 230 write /tmp/textfile.txt;
 #X msg 101 252 write /tmp/textfile2.txt cr;
 #X msg 101 274 read textfile.txt cr;
 #X msg 101 120 clear;
-#X text 152 119 empty the object;
-#X text 208 142 add a message;
+#X text 152 119 オブジェクトを空にする;
+#X text 208 142 メッセージを足す;
 #X msg 101 186 set 2 4 6 8;
-#X text 208 186 clear and then add one message;
+#X text 208 186 clearしてからあるメッセージを足す;
 #X msg 101 142 add cis boom bah;
 #X msg 101 164 add2 bang;
-#X text 208 164 add an unterminated message;
+#X text 208 164 終端されていないメッセージを足す;
 #X msg 101 296 print;
-#X text 145 296 debugging printout;
-#X text 248 229 write a file;
+#X text 145 296 プリントアウトのデバッグ;
+#X text 248 229 ファイルを書き出す;	
 #X obj 40 322 textfile;
-#X text 272 251 write a file \, terminating lines with a;
-#X text 273 266 carriage return (omitting semicolons).;
-#X text 272 281 You can read files this way \, too \, in;
-#X text 273 296 which case carriage returns are mapped;
+#X text 272 251 ファイルを書き出す。行末をキャリッジリターンで	;
+#X text 273 266 終端する（セミコロンなしで）。;
+#X text 272 281 同様にしてファイルを読み込むこともできる。;
+#X text 273 296 この場合、キャリッジリターンはセミコロンに;
 #N canvas 94 361 428 199 About_textfile 0;
 #X obj 1 1 cnv 15 425 20 empty \$0-pddp.cnv.subheading empty 3 12 0
 14 -204280 -1 0;
@@ -97,7 +95,7 @@ sequences of messages.;
 #X obj 40 369 print message;
 #X obj 4 597 pddp/pddplink all_about_help_patches.pd -text Usage Guide
 ;
-#X text 274 311 to semicolons.;
+#X text 274 311 マッピングされる。;
 #X connect 21 0 41 0;
 #X connect 23 0 41 0;
 #X connect 25 0 41 0;
