@@ -11,35 +11,37 @@
 #X floatatom 26 17 0 0 0 0 - - -;
 #X floatatom 48 41 0 0 0 0 - - -;
 #X obj 26 85 +;
-#X text 3 64 hot;
-#X text 53 66 cold;
-#X text 232 105 Here's the downside: drag this--->;
+#X text 3 64 ホット;
+#X text 53 66 コールド;
+#X text 232 105 良くない例: ドラッグしてみてください --->;
 #X text 551 180 good;
 #X text 600 181 bad;
 #X obj 76 376 *;
 #X obj 189 377 -;
-#X text 15 400 square;
-#X text 229 402 first difference;
+#X text 15 400 2乗;
+#X text 229 402 第1階差;
 #X obj 76 330 trigger float float;
 #X text 412 526 updated for Pd version 0.33;
-#X text 19 433 Trigger takes any number of "bang" and "float" arguments
-(among others) and copies its input to its outlets \, in the requested
-forms \, in right-to-left order. Hook it to two inputs without crossing
-the wires and you get the expected result. Cross the wires and you
-get a memory effect.;
-#X text 9 136 In Pd you must sometimes think about what order an object
-is going to get its messages in. If an outlet is connected to more
-than one inlet it's undefined which inlet will get the cookie first.
-I've rigged this example so that the left-hand side box gets its inputs
-in the good \, right-to-left order \, so that the hot inlet gets hit
-when all the data are good. The "bad adder" happens to receive its
-inputs in the wrong order and is perpetually doing its addition before
-all the data are in. There's an object that exists solely to allow
-you to control message order explicitly:;
-#X text 114 16 In Pd \, most objects carry out their functions when
-they get messages in their leftmost inlets \, and their other inlets
-are for storing values that can modify the next action. Here \, the
-"+" object does its thing only when the left-hand input changes.;
+#X text 19 433 Trigger オブジェクトは、任意の数の "bang" と "float" を引数にとり、
+\; それらを規定の「右から左」の順番でアウトレットから出力します。
+\; 線を交差させることなく2つのインプットに接続すると、
+\; 期待した通りの結果が得られるでしょう。
+\; 線を交差させた場合、データを記憶する効果が得られます。;
+#X text 9 136 Pd では、オブジェクトがどのような順番でメッセージを受け取るのか
+\; について注意しなければならないときがあります。
+\; あるアウトレットが2つ以上のインレットに接続されているとき、
+\; どのインレットに最初に届くのかは決まっていません。
+\; この例で、左側のボックスは期待通りに「右から左」の順番でインプットを
+\; 受け取っているので、ホットインレットへの入力で加算が実行される
+\; ときには、全てのデータが正しい状態に揃っています。
+\; 対して、"ダメ加算装置" は、インプットを誤った順番で受け取っていることで、
+\; データが揃う前に加算が実行されているために発生します。
+\; そこで、メッセージの順番を明示的に制御するためのオブジェクトが用意されています。;
+#X text 114 16 Pd では、ほとんどのオブジェクトは、一番左のインレットに
+\; メッセージを受け取ったときにその機能を実行し、他のインレットは、
+\; 受け取った値を保持し、次のアクションに変化を与えるために使われます。
+\; この例で、"+" オブジェクトは、左側へのインプットが変化したとき
+\; だけ実行されます。;
 #X connect 2 0 21 0;
 #X connect 5 0 3 0;
 #X connect 6 0 7 0;
